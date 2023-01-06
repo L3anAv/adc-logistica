@@ -2,9 +2,7 @@ import styled from 'styled-components'
 
 const NavWeb = styled.ul`
   display:flex;
-  margin-top:5%;
   list-style-type:none;
-  top:0;
 `
 
 const ItemMenu = styled.li`
@@ -15,7 +13,7 @@ const ItemMenu = styled.li`
 `
 
 const BotonItem = styled.a`
-  color:#000;
+  color:#fff;
   text-decoration:none;
 `
 
