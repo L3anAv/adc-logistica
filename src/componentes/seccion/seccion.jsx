@@ -1,10 +1,28 @@
 import Menu from "../menu/menu" 
 import styled from 'styled-components'
 
-const ContenedorSeccion = styled.div`
+const FondoDeSeccion = styled.div`
   width:100%;
-  height:900px;
-  background:#000000;
+  height:700px;
+  background: url("/public/images/imagen-principal-web-adc.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+
+  :after {
+    content: "";
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    opacity:80%;
+    background: linear-gradient(0deg, rgba(4,11,40,1) 0%, rgba(78,112,239,1) 100%);
+  }
 `
 
 const Titulo = styled.h1`
@@ -14,19 +32,23 @@ const Titulo = styled.h1`
   margin-left:0.5%;
   margin-bottom:5px;
   font-size:32px;
+  z-index:1;
 `
 const TituloCentral = styled(Titulo)`
-  width:75px;
-  margin-left:5%;
+  width:60%;
+  margin-top:2%;
+  margin-left:10%;
+  padding:30px;
+  text-aling:justify;
+  z-index:1;
 `
 const seccion = () => {
   return (
     <>
-    <ContenedorSeccion>
-      <Titulo>ADC Logistica</Titulo>
-      <Menu />
-      <TituloCentral>SERVICIOS LOGISTICOS & ALQUILER DE MAQUINARIAS</TituloCentral>
-    </ContenedorSeccion>
+    <FondoDeSeccion />
+    <Titulo>ADC Logistica</Titulo>
+    <Menu />
+    <TituloCentral>SERVICIOS LOGISTICOS & ALQUILER DE MAQUINARIAS</TituloCentral>
     </>
  )
 }
