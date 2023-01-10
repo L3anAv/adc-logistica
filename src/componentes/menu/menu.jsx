@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 const NavWeb = styled.nav`
+  height:30px;
   margin-top:3%;
-  margin-left:3%;
+  margin-left:2.5%;
   list-style-type:none;
 `
 
@@ -12,12 +13,19 @@ const UlMenu = styled.ul`
 
 const ItemMenu = styled.li`
   color:#fff;
-  padding-left:5px;
-  padding-right:5px;
+  padding-left:12px;
+  padding-right:12px;
+  padding-bottom:10px;
   text-decoration:none;
+  user-select:none;
+
+  :hover{
+    border-bottom: 2px solid white;
+  }
 `
 
 const BotonItem = styled.a`
+  font-family:FontMenu;
   color:#fff;
   text-decoration:none;
 `
@@ -27,11 +35,11 @@ const Menu = () => {
     <>
      <NavWeb>
       <UlMenu>
-      <ItemMenu><BotonItem href='/'>Inicio</BotonItem></ItemMenu>
-      <ItemMenu><BotonItem  href='/quienes-somos'>Quienes somos</BotonItem></ItemMenu>
-      <ItemMenu><BotonItem href='/que-hacemos'>Que hacemos</BotonItem></ItemMenu>
-      <ItemMenu><BotonItem>Contacto</BotonItem></ItemMenu>
-      <ItemMenu><BotonItem href='/preguntas-frecuentes'>Preguntas Frecuentes</BotonItem></ItemMenu>
+      <ItemMenu><BotonItem href='/'>INICIO</BotonItem></ItemMenu>
+      <ItemMenu><BotonItem  href='/quienes-somos'>QUIENES SOMOS</BotonItem></ItemMenu>
+      <ItemMenu><BotonItem href='/que-hacemos'>QUE HACEMOS</BotonItem></ItemMenu>
+      <ItemMenu><BotonItem>CONTACTO</BotonItem></ItemMenu>
+      <ItemMenu><BotonItem href='/preguntas-frecuentes'>PREGUNTAS FRECUENTES</BotonItem></ItemMenu>
       </UlMenu>
       </NavWeb>
     </>

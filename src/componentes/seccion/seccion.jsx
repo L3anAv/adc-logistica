@@ -27,28 +27,89 @@ const FondoDeSeccion = styled.div`
 
 const Titulo = styled.h1`
   color:#fff;
+  font-family: SubTituloPrincipal;
   padding-top:20px;
   padding-left:20px;
-  margin-left:0.5%;
+  margin-left:2%;
   margin-bottom:5px;
-  font-size:32px;
+  font-size:28px;
   z-index:1;
 `
 const TituloCentral = styled(Titulo)`
-  width:60%;
-  margin-top:2%;
+  width:75%;
+  opacity:88%;
+  margin-top:4%;
+  margin-bottom:0;
+  font-size:60px;
+  font-family: TituloPrincipal;
   margin-left:10%;
-  padding:30px;
   text-aling:justify;
   z-index:1;
+
+  ::selection {
+    color: #000;
+    background:rgba(78,112,239,1);
+  }
 `
+
+const Subtitulo = styled(TituloCentral)`
+  font-size:20px;
+  margin-top:0;
+  font-weight:100;
+  font-family: SubTituloPrincipal;
+`
+const BotonNuestrosServicios = styled.button`
+  display:flex;
+  color:#fff;
+  width:225px;
+  height:40px;
+  margin-top:2%;
+  cursor:pointer;
+  margin-left:11.5%;
+  background:#3d5bcc;
+  font-family: TituloPrincipal;
+  align-items: center;
+  justify-content:center;
+  border-radius:5px;
+  transition: background 0.8s ease;
+
+  :hover{
+    background:#294198;
+  }
+`
+
+const LinkContenido = styled.a`
+  color:#fff;
+  font-size:15px;
+  font-family:TituloPrincipal;
+  transition:font-size 0.5s;
+
+  :hover{
+    font-size:16px;
+  }
+
+`
+
+
 const seccion = () => {
   return (
     <>
     <FondoDeSeccion />
+    { /* 
+      Esto va dentro del header
+     */}
     <Titulo>ADC Logistica</Titulo>
     <Menu />
+
+    { /* 
+      Esto es una section del centro
+     */}
     <TituloCentral>SERVICIOS LOGISTICOS & ALQUILER DE MAQUINARIAS</TituloCentral>
+    <Subtitulo>Prestamos servicio a empresas y particulares.</Subtitulo>
+    <BotonNuestrosServicios>
+      <LinkContenido href="/que-hacemos">CONOCER MÁS...</LinkContenido>
+    </BotonNuestrosServicios>
+
     </>
  )
 }

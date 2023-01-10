@@ -1,3 +1,18 @@
+@font-face {
+  font-family: TituloPrincipal;
+  src: url('/public/fonts/BakbakOne-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: SubTituloPrincipal;
+  src:url('/public/fonts/BIZUDPGothic-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: FontMenu;
+  src:url('/public/fonts/Amiko-Regular.ttf')  format('truetype');
+}
+
 * {
   margin:0;
   padding:0;
