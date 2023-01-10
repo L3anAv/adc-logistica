@@ -42,10 +42,12 @@ const TituloCentral = styled(Titulo)`
   margin-bottom:0;
   font-size:60px;
   font-family: TituloPrincipal;
-  margin-left:10%;
   text-aling:justify;
+  margin-left:10%;
+  opacity:100%;
+  overflow:hidden;
   z-index:1;
-
+  animation: 1.5s TituloAnimacion;
   ::selection {
     color: #000;
     background:rgba(78,112,239,1);
@@ -72,6 +74,7 @@ const BotonNuestrosServicios = styled.button`
   justify-content:center;
   border-radius:5px;
   transition: background 0.8s ease;
+  animation:2s BotonAnimacion;
 
   :hover{
     background:#294198;

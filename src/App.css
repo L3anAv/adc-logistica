@@ -13,6 +13,85 @@
   src:url('/public/fonts/Amiko-Regular.ttf')  format('truetype');
 }
 
+@keyframes TituloAnimacion {
+  
+  from {
+      margin-left:-100%;
+      opacity:0%;
+  }
+
+  85% {
+    margin-left:15%;
+    opacity:50%;
+  }
+
+  to{
+    margin-left:10%;
+    opacity:90%;
+  }
+
+}
+
+@keyframes MenuAparicion {
+  
+  0% {
+    opacity: 0;
+  }
+
+  40%{
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  70% {
+    opacity: 60%;
+  }
+
+  75% {
+    opacity: 70%;
+  }
+
+  85% {
+    opacity: 85%;
+  }
+
+  100%{
+    opacity: 100%;
+  }
+}
+
+
+@keyframes BotonAnimacion {
+  
+  from {
+    margin-left:-100%;
+    opacity: 0;
+  }
+
+  50%{
+    margin-left:22%;
+    opacity: 10%;
+  }
+
+  60%{
+    margin-left:15%;
+    opacity: 60%;
+  }
+
+  85%{
+    margin-left: 11.8%;
+    opacity: 95%;
+  }
+
+  to {
+    margin-left:11.5%;
+    opacity: 100%;
+  }
+}
+
 * {
   margin:0;
   padding:0;

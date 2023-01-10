@@ -5,6 +5,8 @@ const NavWeb = styled.nav`
   margin-top:3%;
   margin-left:2.5%;
   list-style-type:none;
+  opacity: 100%;
+  animation: 1s MenuAparicion;
 `
 
 const UlMenu = styled.ul`
