@@ -1,4 +1,4 @@
-import Menu from "../menu/menu" 
+import Menu from "../menu/index" 
 import styled from 'styled-components'
 
 const FondoDeSeccion = styled.div`
@@ -98,12 +98,21 @@ const seccion = () => {
     { /* 
       Esto va dentro del header
      */}
+
     <Titulo>ADC Logistica</Titulo>
+
+    {/* 
+      Necesito justify-content:space-between;
+      faltan redes sociales del otro lado
+      y poner fixed cuando baje hasta cierto nivel del scroll
+    */}
+
     <Menu />
 
     { /* 
       Esto es una section del centro
      */}
+     
     <TituloCentral>SERVICIOS LOGISTICOS & ALQUILER DE MAQUINARIAS</TituloCentral>
     <Subtitulo>Prestamos servicio a empresas y particulares.</Subtitulo>
     <BotonNuestrosServicios>

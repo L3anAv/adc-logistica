@@ -1,4 +1,4 @@
-import Seccion from './componentes/seccion/seccion' 
+import Seccion from './componentes/seccion/index' 
 import './App.css'
 
 function App() {  
