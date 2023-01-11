@@ -1,12 +1,23 @@
 import styled from 'styled-components'
 
+/* Opciones de menu -> */
+const opcionesMenu = 
+[
+  {"nombre": "INICIO", "href": "/"},
+  {"nombre": "QUIENES SOMOS","href": "/quienes-somos"},
+  {"nombre": "QUIENES HACEMOS","href": "/que-hacemos"},
+  {"nombre": "CONTACTO","href": null},
+  {"nombre": "PREGUNTAS FRECUENTES","href": "/preguntas-frecuentes"}
+]
+
+/* Styled Components de menu -> */
 const NavWeb = styled.nav`
   height:30px;
   margin-top:3%;
   margin-left:2.5%;
   list-style-type:none;
   opacity: 100%;
-  animation: 1s MenuAparicion;
+  animation: 0.7s MenuAparicion;
 `
 
 const UlMenu = styled.ul`
@@ -33,17 +44,16 @@ const BotonItem = styled.a`
 `
 
 const Menu = () => {
+
   return (
     <>
      <NavWeb>
       <UlMenu>
-      <ItemMenu><BotonItem href='/'>INICIO</BotonItem></ItemMenu>
-      <ItemMenu><BotonItem  href='/quienes-somos'>QUIENES SOMOS</BotonItem></ItemMenu>
-      <ItemMenu><BotonItem href='/que-hacemos'>QUE HACEMOS</BotonItem></ItemMenu>
-      <ItemMenu><BotonItem>CONTACTO</BotonItem></ItemMenu>
-      <ItemMenu><BotonItem href='/preguntas-frecuentes'>PREGUNTAS FRECUENTES</BotonItem></ItemMenu>
+      {opcionesMenu.map(item => 
+      <ItemMenu key={item.nombre}><BotonItem href={item.href}>{item.nombre}</BotonItem></ItemMenu>  
+      )}
       </UlMenu>
-      </NavWeb>
+     </NavWeb>
     </>
   )
 }

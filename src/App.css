@@ -1,3 +1,5 @@
+/* Fuentes -> */
+
 @font-face {
   font-family: TituloPrincipal;
   src: url('/public/fonts/BakbakOne-Regular.ttf')  format('truetype');
@@ -13,6 +15,7 @@
   src:url('/public/fonts/Amiko-Regular.ttf')  format('truetype');
 }
 
+/* Animaciones -> */
 @keyframes TituloAnimacion {
   
   from {
@@ -69,7 +72,6 @@
   }
 }
 
-
 @keyframes BotonAnimacion {
   
   from {
@@ -98,6 +100,7 @@
   }
 }
 
+/* Estilos generales -> */
 * {
   margin:0;
   padding:0;

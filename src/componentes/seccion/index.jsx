@@ -93,7 +93,6 @@ const LinkContenido = styled.a`
 
 `
 
-
 const seccion = () => {
   return (
     <>
