@@ -72,6 +72,41 @@
   }
 }
 
+@keyframes Titulo {
+  
+  0% {
+    opacity: 0;
+  }
+
+  40%{
+    opacity: 0;
+  }
+
+  45%{
+    opacity: 10%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  70% {
+    opacity: 60%;
+  }
+
+  75% {
+    opacity: 70%;
+  }
+
+  85% {
+    opacity: 85%;
+  }
+
+  100%{
+    opacity: 100%;
+  }
+}
+
 @keyframes BotonAnimacion {
   
   from {
@@ -98,6 +133,18 @@
     margin-left:11.5%;
     opacity: 100%;
   }
+}
+
+.instagram{
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.linkedin{
+  background:#0274b3;
+}
+
+.twitter{
+  background:#1da1f3;
 }
 
 /* Estilos generales -> */
