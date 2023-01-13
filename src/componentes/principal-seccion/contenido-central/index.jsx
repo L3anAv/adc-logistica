@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+const SeccionPrincipal = styled.section`
+    widht:100%;
+    margin-bottom:11%;
+`
+
 const TituloCentral = styled.h1`
   color:#fff;
   width:75%;
@@ -77,11 +82,13 @@ const Span = styled.span`
 const contenidoCentral = () => {
   return (
     <>
+    <SeccionPrincipal>
     <TituloCentral>SERVICIOS LOGISTICOS & ALQUILER DE MAQUINARIAS</TituloCentral>
     <Subtitulo>Prestamos servicio a empresas y particulares.</Subtitulo>
     <BotonNuestrosServicios>
       <LinkContenido href="/que-hacemos">CONOCER MÁS... <Span>&#62;</Span></LinkContenido>
     </BotonNuestrosServicios>
+    </SeccionPrincipal>
     </>
   )
 }

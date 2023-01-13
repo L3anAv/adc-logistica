@@ -1,5 +1,5 @@
-import Header from '../header/index'
-import ContenidoCentral from '../contenido-central'
+import Header from './header/index'
+import ContenidoCentral from './contenido-central/index'
 import { FondoDeSeccion } from './fondo-inicio/fondo'
 
 const principal = () => {

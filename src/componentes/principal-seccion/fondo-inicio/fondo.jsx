@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const FondoDeSeccion = styled.div`
   width:100%;
-  height:625px;
+  height:635px;
   background: url("/public/images/imagen-principal-web-adc.jpeg");
   background-repeat: no-repeat;
   background-position: center;
