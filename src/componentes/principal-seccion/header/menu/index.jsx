@@ -40,8 +40,8 @@ const ItemMenu = styled.li`
 `
 
 const BotonItem = styled.a`
-  font-family:FontMenu;
   color:#fff;
+  font-family:FontMenu;
   text-decoration:none;
 `
 
