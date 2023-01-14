@@ -5,30 +5,37 @@ const ContenedorQueHacemos = styled.section`
   width:100%;
   display:grid;
   overflow:hidden;
+  margin-top:6%;
+  margin-bottom:5%;
   justify-content:center;
-  grid-template-rows:auto auto auto auto;
   grid-template-columns:15% 35% 35% 15%;
+  grid-template-rows:auto auto auto auto;
 `
 
 const TituloSeccion = styled(Titulo)`
   grid-row:1/2;
-  margin-top:4%;
+  margin-top:12%;
   grid-column: 2/4;
   aling-self:center;
   justify-self: center;
+
+  ::selection{
+    color:#fff;
+  }
 `
 const MenuServicios = styled.nav`
+  height:50px;
   grid-row:2/3;
   grid-column: 2/4;
-  height:50px;
+  user-select: none;
   justify-self:center;
 `
 
 const UlMenuServ = styled.ul`
-    display:flex;
-    padding:20px;
-    font-size:18px;
-    font-family:FontMenu;
+  display:flex;
+  padding:20px;
+  font-size:18px;
+  font-family:FontMenu;
 `
 
 const LiMenuServ = styled.li`
@@ -60,6 +67,7 @@ const FichaServicio = styled.div`
   :hover{
     transform:scale(1.1);
   }
+
 `
 
 const UlFicha = styled.ul`
@@ -73,6 +81,11 @@ const LiFicha = styled.li`
   margin-left:8%;
   text-align: start;
   font-family:FontMenu;
+
+  ::selection{
+    color:#fff;
+    background:rgba(78,112,239,1);
+  }
 `
 
 const Svg = styled.svg`
