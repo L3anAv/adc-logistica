@@ -86,11 +86,13 @@ const Svg = styled.svg`
 `
 const Menu = () => {
 
-  const [scrollPosicion, setscrollPosicion] = useState(0)
   const [menuFixed, setmenuFixed] = useState(false)
+  const [menuColor, setmenuColor] = useState(false)
+  const [scrollPosicion, setscrollPosicion] = useState(0)
 
   function darPosicionDeScroll(){
     window.addEventListener('scroll', () => {
+      console.log(window.scrollY)
       setscrollPosicion(window.scrollY)
     })
   }
@@ -105,6 +107,13 @@ const Menu = () => {
     }else{
       setmenuFixed(false)
     }
+
+    if(scrollPosicion >= 622){
+      setmenuColor(true)
+    }else{
+      setmenuColor(false)
+    }
+
   }, [scrollPosicion])
 
   return (
@@ -116,8 +125,8 @@ const Menu = () => {
               navWebPosition={menuFixed == true ? 'fixed' : 'none'} >
       <UlMenu>
       {opcionesMenu.map(item => 
-      <ItemMenu ItemMenuBorder={menuFixed == true ? '2px solid black' : '2px solid white'} key={item.nombre}>
-      <BotonItem BotonItemColor={menuFixed == true ? '#000' : '#fff'} href={item.href}>
+      <ItemMenu ItemMenuBorder={menuFixed == true && menuColor == true ? '2px solid black' : '2px solid white'} key={item.nombre}>
+      <BotonItem BotonItemColor={menuFixed == true && menuColor == true ? '#000' : '#fff'} href={item.href}>
         {item.nombre}
       </BotonItem>
       </ItemMenu>  
