@@ -5,32 +5,66 @@ const ContenedorQueHacemos = styled.section`
   width:100%;
   display:grid;
   overflow:hidden;
-  margin-bottom:5%;
   justify-content:center;
+  grid-template-rows:auto auto auto auto;
   grid-template-columns:15% 35% 35% 15%;
 `
 
 const TituloSeccion = styled(Titulo)`
+  grid-row:1/2;
+  margin-top:4%;
   grid-column: 2/4;
   aling-self:center;
   justify-self: center;
 `
+const MenuServicios = styled.nav`
+  grid-row:2/3;
+  grid-column: 2/4;
+  height:50px;
+  justify-self:center;
+`
+
+const UlMenuServ = styled.ul`
+    display:flex;
+    padding:20px;
+    font-size:18px;
+    font-family:FontMenu;
+`
+
+const LiMenuServ = styled.li`
+  margin-left:8px;
+  margin-right:8px;
+  cursor:pointer;
+
+  :hover{
+    border-bottom:4px solid #3d5bcc;
+  }
+`
 
 const FichaServicio = styled.div`
+  display:grid;
+  grid-template-columns:25% 15% 60%;
+  grid:'icono lista lista'
+      'vacio vacio boton';
   color:#000;
-  margin:10px;
+  margin-top:4%;
+  margin-right:8%;
+  margin-left:8%;
+  margin-bottom:4%;
   padding:20px;
-  display:flex;
-  cursor:pointer;
   border:1px solid;
   border-radius:10px;
-  justify-content:space-around;
   grid-row:${props => props.fichaRow};
   grid-column:${props => props.fichaColum};
+
+  :hover{
+    transform:scale(1.1);
+  }
 `
 
 const UlFicha = styled.ul`
   width:80%;
+  grid-area:lista;
   margin-top:5px;
 `
 
@@ -42,7 +76,7 @@ const LiFicha = styled.li`
 `
 
 const Svg = styled.svg`
-
+  grid-area:icono;
   width:75px;
   height:75px;
   margin-top:3%;
@@ -69,14 +103,38 @@ const Volquete = styled(Svg)`
   transform:scale(1.7);
 `
 
+const Boton = styled.button`
+  color:#fff;
+  padding:8px;
+  font-size:15px;
+  cursor:pointer;
+  grid-area:boton;
+  border:1px solid;
+  border-radius:10px;
+  background:#111b44;
+  font-family:FontMenu;
 
+  :hover{
+    color:#fff;
+    background:#3d5bcc;
+  }
+`
 const queHacemos = () => {
   return (
     <>
     <ContenedorQueHacemos>
+
       <TituloSeccion>¿QUE HACEMOS?</TituloSeccion>
 
-       <FichaServicio fichaRow="2/3" fichaColum="2/3">
+      <MenuServicios>
+        <UlMenuServ>
+          <LiMenuServ>Servicios</LiMenuServ>
+          <LiMenuServ>Alquieres</LiMenuServ>
+          <LiMenuServ>Almacenamiento/Deposito</LiMenuServ>
+        </UlMenuServ>
+      </MenuServicios>
+
+       <FichaServicio fichaRow="3/4" fichaColum="2/3">
        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
         <path d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h50.7L544 237.3V256H416V160zM208 416c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zm272 48c-26.5 0-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48s-21.5 48-48 48z"/>
        </Svg>
@@ -85,9 +143,11 @@ const queHacemos = () => {
         <LiFicha> - Transporte de cargas generales y peligrosas.</LiFicha>
         <LiFicha> - Fletes y mudanzas.</LiFicha>
        </UlFicha>
+
+       <Boton>Solicitar servicio</Boton>
       </FichaServicio>
 
-      <FichaServicio fichaRow="2/3" fichaColum="3/4" >
+      <FichaServicio fichaRow="3/4" fichaColum="3/4" >
       <SvgHechoaMano xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1280">
         <path d="M 638.5,199.5 C 657.503,199.01 669.003,208.01 673,226.5C 673.5,322.833 673.667,419.166 673.5,515.5C 695.503,515.333 717.503,515.5 739.5,516C 757.514,521.512 765.347,533.679 763,552.5C 759.73,565.437 751.563,573.27 738.5,576C 699.496,576.167 660.496,576.667 621.5,577.5C 616.28,589.557 608.28,599.391 597.5,607C 659.832,607.5 722.166,607.667 784.5,607.5C 784.333,491.166 784.5,374.833 785,258.5C 789.833,238.333 802.333,225.833 822.5,221C 846.833,220.333 871.167,220.333 895.5,221C 915.5,224.417 932,233.917 945,249.5C 970.698,290.367 996.198,331.367 1021.5,372.5C 1070.25,373.108 1101.08,396.774 1114,443.5C 1114.67,544.5 1114.67,645.5 1114,746.5C 1104.4,785.43 1079.9,808.597 1040.5,816C 1015.5,816.5 990.502,816.667 965.5,816.5C 959.267,868.888 931.933,905.388 883.5,926C 828.908,943.145 782.074,930.978 743,889.5C 725.439,868.365 715.605,844.032 713.5,816.5C 664.5,816.5 615.5,816.5 566.5,816.5C 559.002,876.634 526.002,914.801 467.5,931C 416.481,939.997 374.314,924.83 341,885.5C 325.195,865.261 316.361,842.261 314.5,816.5C 289.498,816.667 264.498,816.5 239.5,816C 200.084,808.584 175.584,785.417 166,746.5C 165.333,711.5 165.333,676.5 166,641.5C 172.108,623.725 184.274,612.559 202.5,608C 245.833,607.667 289.167,607.333 332.5,607C 323.533,598.564 317.533,588.397 314.5,576.5C 301.452,576.924 291.619,571.591 285,560.5C 283.601,557.637 282.601,554.637 282,551.5C 281.026,506.129 281.359,460.796 283,415.5C 287.018,405.48 294.185,398.98 304.5,396C 326.831,395.5 349.164,395.333 371.5,395.5C 371.333,353.832 371.5,312.165 372,270.5C 375.285,256.214 384.119,247.714 398.5,245C 427.833,244.333 457.167,244.333 486.5,245C 523.516,249.243 549.349,268.41 564,302.5C 574.5,334 585,365.5 595.5,397C 603.513,401.348 609.013,407.848 612,416.5C 612.333,351.833 612.667,287.167 613,222.5C 616.978,209.683 625.478,202.016 638.5,199.5 Z M 848.5,285.5 C 860.66,284.34 872.993,284.173 885.5,285C 887.608,285.36 889.608,286.027 891.5,287C 910.093,315.1 928.093,343.6 945.5,372.5C 913.167,373.833 880.833,373.833 848.5,372.5C 849.829,343.373 849.829,314.373 848.5,285.5 Z M 432.5,305.5 C 448.837,305.333 465.17,305.5 481.5,306C 491.288,306.807 498.788,311.307 504,319.5C 513.233,344.532 522.066,369.699 530.5,395C 513.17,395.5 495.837,395.667 478.5,395.5C 475.536,368.036 460.369,352.703 433,349.5C 432.5,334.837 432.333,320.17 432.5,305.5 Z M 848.5,437.5 C 909.168,437.333 969.834,437.5 1030.5,438C 1040.51,439.413 1047.01,444.913 1050,454.5C 1050.5,505.499 1050.67,556.499 1050.5,607.5C 983.163,607.833 915.83,607.5 848.5,606.5C 849.829,550.167 849.829,493.833 848.5,437.5 Z M 548.5,531.5 C 557.994,530.511 564.161,534.511 567,543.5C 567.542,551.97 563.709,557.47 555.5,560C 543.006,560.169 537.506,554.002 539,541.5C 541.022,536.98 544.189,533.647 548.5,531.5 Z M 430.5,576.5 C 448.17,576.333 465.836,576.5 483.5,577C 489.281,588.78 497.281,598.78 507.5,607C 475.5,607.667 443.5,607.667 411.5,607C 421.25,599.008 427.583,588.841 430.5,576.5 Z M 229.5,671.5 C 503.167,671.5 776.833,671.5 1050.5,671.5C 1050.67,692.836 1050.5,714.169 1050,735.5C 1047.26,744.793 1041.1,750.293 1031.5,752C 1005.5,752.5 979.502,752.667 953.5,752.5C 933.476,711.022 900.476,686.855 854.5,680C 795.677,676.405 752.343,700.405 724.5,752C 668.167,752.667 611.833,752.667 555.5,752C 527.691,700.42 484.358,676.42 425.5,680C 379.825,687.028 346.492,711.028 325.5,752C 299.833,752.667 274.167,752.667 248.5,752C 239.043,750.697 232.876,745.53 230,736.5C 229.5,714.836 229.333,693.169 229.5,671.5 Z M 436.5,743.5 C 476.6,745.6 498.933,766.6 503.5,806.5C 499.491,844.509 478.491,865.509 440.5,869.5C 402.5,865.5 381.5,844.5 377.5,806.5C 381.101,770.237 400.768,749.237 436.5,743.5 Z M 835.5,743.5 C 870.407,744.52 892.241,761.853 901,795.5C 904.692,826.957 892.525,849.79 864.5,864C 835.531,874.383 810.697,868.216 790,845.5C 772,819.5 772,793.5 790,767.5C 802.122,753.524 817.289,745.524 835.5,743.5 Z"/>
       </SvgHechoaMano>
@@ -95,9 +155,11 @@ const queHacemos = () => {
       <UlFicha>
         <LiFicha> - Acarreo de autos/maquinaria. </LiFicha>
        </UlFicha>
+
+       <Boton>Solicitar servicio</Boton>
       </FichaServicio>
 
-      <FichaServicio fichaRow="3/4" fichaColum="2/3" >
+      <FichaServicio fichaRow="4/5" fichaColum="2/3" >
       <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 131">
       <path d="M216.625,87.554c-13.141-1.295-24.07,9.634-22.774,22.774c0.958,9.722,8.822,17.586,18.545,18.545
 	c13.141,1.296,24.07-9.634,22.775-22.775C234.212,96.376,226.348,88.512,216.625,87.554z M222.217,110.196
@@ -124,9 +186,10 @@ const queHacemos = () => {
         <LiFicha> - Desagotes. </LiFicha>
       </UlFicha>
 
+      <Boton>Solicitar servicio</Boton>
       </FichaServicio>
 
-      <FichaServicio fichaRow="3/4" fichaColum="3/4" >
+      <FichaServicio fichaRow="4/5" fichaColum="3/4" >
 
       <Volquete version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920.000000 1000.000000">
   <g transform="translate(0.000000,1000.000000) scale(0.100000,-0.100000)"
@@ -192,6 +255,8 @@ const queHacemos = () => {
       <UlFicha>
         <LiFicha> - Volquetes. </LiFicha>
       </UlFicha>
+
+      <Boton>Solicitar servicio</Boton>
       </FichaServicio>
     </ContenedorQueHacemos>
     

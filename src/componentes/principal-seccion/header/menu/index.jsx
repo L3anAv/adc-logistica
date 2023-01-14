@@ -10,16 +10,26 @@ const opcionesMenu =
   {"nombre": "PREGUNTAS FRECUENTES","href": "/preguntas-frecuentes"}
 ]
 
-/* Styled Components de menu -> */
-const NavWeb = styled.nav`
-  display:flex;
-  justify-content:space-between;
+{/* 
+   para menu cuando scroll > "averiguar"
+   top:30px;
+   width:95%; 
+   position:fixed;
+  */}
+
+  /* Styled Components de menu -> */
+  const NavWeb = styled.nav`
+  top:0;
+  width:auto; 
   height:35px;
+  display:flex;
   margin-top:3%;
+  opacity: 100%;
+  position:none;
   margin-left:2.5%;
   list-style-type:none;
-  opacity: 100%;
   animation: 0.7s MenuAparicion;
+  justify-content:space-between;
 `
 
 const UlMenu = styled.ul`
@@ -74,6 +84,14 @@ const Svg = styled.svg`
   
 `
 const Menu = () => {
+
+
+  {/* 
+    Condicionar el NavWeb por props segun el scroll
+    Una funciona que controla el valor del scroll cuando este sea mayor a, se pone en true fijarMenu
+    y se cambiar el valor de un estado de tipo boolean que si es true activa todas las opciones
+    de arriba de menu fixed.
+*/}
 
   return (
     <>

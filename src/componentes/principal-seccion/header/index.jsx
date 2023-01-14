@@ -16,6 +16,9 @@ const Titulo = styled.h1`
 const header = () => {
   return (
    <>
+      {/* Falta un componente que contenga el titulo y los numeros de contacto que 
+        desaparezca tambien cuando el scroll sea mayor a >
+      */}
        <Titulo>ADC ARGENTINA UNIENDO EMPRESAS</Titulo>
        <Menu />
    </>
