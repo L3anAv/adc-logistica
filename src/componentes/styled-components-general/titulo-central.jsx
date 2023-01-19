@@ -1,11 +1,10 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-export const Titulo = styled.h1`
-  
+export const Titulo = styled.h2`
   color:#000;
   opacity:100%;
-  font-size:55px;
   margin-top:2%;
+  font-size:2rem;
   overflow:hidden;
   font-family: TituloPrincipal;
   
