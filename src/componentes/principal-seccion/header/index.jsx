@@ -17,6 +17,11 @@ const ContenedorPrincipal = styled.div`
 const ContenedorContacto =  styled.div`
   display:flex;
   animation:Titulo 1s;
+
+  @media (max-width: 500px){
+    flex-direction:column;
+    margin-left:2%;
+  }
 `
 
 const TextoContacto = styled.a`
@@ -35,6 +40,11 @@ color:${props => props.TextoColor || '#fff'};
     color:#fff;
     text-decoration:none;
   }
+
+  @media (max-width: 815px){
+    font-size:0.7rem;
+  }
+
 `
 
 const IconoContacto = styled(Svg)`
@@ -50,6 +60,10 @@ const IconoContacto = styled(Svg)`
     fill-rule: evenodd;
   }
 
+  @media (max-width: 815px){
+    width:15px;
+    height:15px;
+  }
 `
 
 const Titulo = styled.h1`
@@ -61,6 +75,16 @@ const Titulo = styled.h1`
   animation:Titulo 1s;
   font-family: SubTituloPrincipal;
   visibility:${props => props.TituloVisibility || 'visible'};
+
+  @media (max-width: 945px){
+    margin-top:1%;
+    font-size:0.8rem;
+  }
+
+  @media (max-width: 815px){
+    display:none;
+  }
+  
 `
 
 const header = () => {
@@ -134,10 +158,10 @@ const header = () => {
       <TextoContacto TextoColor={contactoColor == true ? '#000' : '#fff'}
       href='mailto:info@adcargentina.com'>info@adcargentina.com</TextoContacto>
       </ContenedorContacto>
-
+      
       </ContenedorPrincipal>
+      <Menu />
        
-       <Menu />
    </>
   )
 }

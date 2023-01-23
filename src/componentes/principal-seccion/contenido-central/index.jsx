@@ -3,6 +3,17 @@ import styled from 'styled-components'
 const SeccionPrincipal = styled.section`
     widht:100%;
     margin-bottom:11%;
+
+
+    @media (max-width: 945px){
+      margin-top:18%;
+      margin-bottom:20%;
+    }
+
+    @media (max-width: 500px){
+      margin-top:30%;
+      margin-bottom:70%;
+    }
 `
 
 const TituloCentral = styled.h2`
@@ -11,7 +22,7 @@ const TituloCentral = styled.h2`
   color:#fff;
   opacity:88%;
   opacity:100%;
-  margin-top:4%;
+  margin-top:6%;
   margin-left:2%;
   overflow:hidden;
   margin-left:10%;
@@ -27,6 +38,16 @@ const TituloCentral = styled.h2`
     color: #000;
     background:rgba(78,112,239,1);
   }
+
+  @media (max-width: 945px){
+    width:85%;
+    font-size:3rem;
+  }
+
+  @media (max-width: 500px){
+    width:83%;
+    font-size:2rem;
+  }
 `
 
 const Subtitulo = styled(TituloCentral)`
@@ -34,6 +55,15 @@ const Subtitulo = styled(TituloCentral)`
   font-weight:100;
   font-size:1.25rem;
   font-family: SubTituloPrincipal;
+
+  @media (max-width: 945px){
+    font-size:0.8rem;
+  }
+
+  @media (max-width: 500px){
+    font-size:0.7rem;
+  }
+
 `
 
 const BotonNuestrosServicios = styled.button`
@@ -60,6 +90,15 @@ const BotonNuestrosServicios = styled.button`
       font-size:1.375rem;
     }
   }
+
+  @media (max-width: 815px){
+    margin-left:12%;
+  }
+
+  @media (max-width: 600px){
+    margin-top:6%;
+    margin-left:14%;
+  }
 `
 
 const LinkContenido = styled.a`
@@ -82,10 +121,11 @@ const Span = styled.span`
 `
 
 const contenidoCentral = () => {
+
   return (
     <>
     <SeccionPrincipal>
-    <TituloCentral>SERVICIOS LOGISTICOS & ALQUILER DE MAQUINARIAS</TituloCentral>
+    <TituloCentral >SERVICIOS LOGISTICOS & ALQUILER DE MAQUINARIAS</TituloCentral>
     <Subtitulo>Prestamos servicio a empresas y particulares.</Subtitulo>
     <BotonNuestrosServicios>
       <LinkContenido href="/que-hacemos">CONOCER MÁS... <Span>&#62;</Span></LinkContenido>
