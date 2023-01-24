@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
-import {Svg} from '../styled-components-general/svg'
-import {Titulo} from '../styled-components-general/titulo-central'
+import {Svg} from '../../styled-components-general/svg'
+import {Titulo} from '../../styled-components-general/titulo-central'
 
 const ContenedorQueHacemos = styled.section`
   width:100%;
@@ -137,11 +137,8 @@ const Boton = styled.button`
   background:none;
   border-radius:5px;
   font-family:FontMenu;
-
-  :hover{
-    border:1px solid #000;
-  }
 `
+
 const queHacemos = () => {
   
   const [windowSize, setWindowSize] = useState(0)
@@ -178,8 +175,8 @@ const queHacemos = () => {
   useEffect(() => {
 
     darWidthPantalla()
-
-    if(windowSize <= 1260){
+    
+    if(windowSize <= 1260 && windowSize != 0){
       setWindowSizeRespon(true)
     }else{
       setWindowSizeRespon(false)
@@ -189,10 +186,6 @@ const queHacemos = () => {
 
   return (
     <>
-     { /* cuando scrollPosicion >= 77 
-     hago que el margin-top se le aumente 125px aumente el total de el menu 
-     */}
-    
     <ContenedorQueHacemos QueHacemosMenuEstaFixed={MenuEstaFixed == true ? '125px' : '0'}
     >
 
@@ -206,13 +199,8 @@ const queHacemos = () => {
         </UlMenuServ>
       </MenuServicios>
 
-      {/*
-          Poner en una fila directo cuando ancho es
-          fichaRow="3/4" fichaColum="2/4"
-      */}
-
-       <FichaServicio fichaColum={windowSizeRespon == true ? '2/4' : '2/3'}
-                      fichaRow={windowSizeRespon == true ? '3/4' : '3/4'} >
+       <FichaServicio fichaColum={windowSizeRespon == true ? '2/4' : '2/3' || '2/3'}
+                      fichaRow={windowSizeRespon == true ? '3/4' : '3/4' || '3/4'} >
        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
         <path d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h50.7L544 237.3V256H416V160zM208 416c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zm272 48c-26.5 0-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48s-21.5 48-48 48z"/>
        </Svg>
@@ -222,7 +210,7 @@ const queHacemos = () => {
         <LiFicha> - Fletes y mudanzas.</LiFicha>
        </UlFicha>
 
-       <Boton>Solicitar servicio >></Boton>
+       <Boton>Solicitar servicio &#62;&#62;</Boton>
       </FichaServicio>
 
       <FichaServicio  fichaColum={windowSizeRespon == true ? '2/4' : '3/4'}
@@ -235,7 +223,7 @@ const queHacemos = () => {
         <LiFicha> - Acarreo de autos/maquinaria. </LiFicha>
       </UlFicha>
 
-       <Boton>Solicitar servicio >></Boton>
+       <Boton>Solicitar servicio &#62; &#62;</Boton>
       </FichaServicio>
 
       <FichaServicio fichaColum={windowSizeRespon == true ? '2/4' : '2/3'}  
@@ -266,7 +254,7 @@ const queHacemos = () => {
         <LiFicha> - Desagotes. </LiFicha>
       </UlFicha>
 
-      <Boton>Solicitar servicio >></Boton>
+      <Boton>Solicitar servicio &#62;&#62;</Boton>
       </FichaServicio>
 
       <FichaServicio fichaColum={windowSizeRespon == true ? '2/4' : '3/4'}
@@ -337,7 +325,7 @@ const queHacemos = () => {
         <LiFicha> - Volquetes. </LiFicha>
       </UlFicha>
 
-      <Boton>Solicitar servicio >></Boton>
+      <Boton>Solicitar servicio &#62;&#62;</Boton>
       </FichaServicio>
     </ContenedorQueHacemos>
     
