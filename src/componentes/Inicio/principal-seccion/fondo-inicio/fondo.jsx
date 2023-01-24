@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const FondoDeSeccion = styled.div`
-  width:100%;
-  height:638px;
+  width: 100%;
+  height: 638px;
   background: url("/public/images/imagen-principal-web-adc.jpeg");
   background-repeat: no-repeat;
   background-position: center;
@@ -10,7 +10,7 @@ export const FondoDeSeccion = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  z-index:-2;
+  z-index: -2;
 
   :after {
     content: "";
@@ -19,8 +19,12 @@ export const FondoDeSeccion = styled.div`
     bottom: 0;
     top: 0;
     position: absolute;
-    opacity:85%;
-    z-index:-1;
-    background: linear-gradient(0deg, rgba(4,11,40,1) 0%, rgba(78,112,239,1) 100%);
+    opacity: 85%;
+    z-index: -1;
+    background: linear-gradient(
+      0deg,
+      rgba(4, 11, 40, 1) 0%,
+      rgba(78, 112, 239, 1) 100%
+    );
   }
-`
+`;

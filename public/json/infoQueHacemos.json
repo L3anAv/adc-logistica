@@ -1,0 +1,43 @@
+{
+    "Servicios": [{
+            "Svg": "Nada",
+            "Texto": "Contenido"
+        },
+        {
+            "Svg": "Nada",
+            "Texto": "Contenido"
+        },
+        {
+            "Svg": "Nada",
+            "Texto": "Contenido"
+        }
+    ],
+
+    "Alquieler": [{
+            "Svg": "Nada",
+            "Texto": "Contenido"
+        },
+        {
+            "Svg": "Nada",
+            "Texto": "Contenido"
+        },
+        {
+            "Svg": "Nada",
+            "Texto": "Contenido"
+        }
+    ],
+
+    "Deposito": [{
+            "Svg": "Nada",
+            "Texto": "Contenido"
+        },
+        {
+            "Svg": "Nada",
+            "Texto": "Contenido"
+        },
+        {
+            "Svg": "Nada",
+            "Texto": "Contenido"
+        }
+    ]
+}
