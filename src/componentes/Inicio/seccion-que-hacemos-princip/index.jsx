@@ -138,34 +138,30 @@ const Boton = styled.button`
 `;
 
 const queHacemos = () => {
+
+  // -> Estados
   const [windowSize, setWindowSize] = useState(0);
   const [scrollPosicion, setscrollPosicion] = useState(0);
   const [MenuEstaFixed, setMenuEstaFixed] = useState(false);
   const [windowSizeRespon, setWindowSizeRespon] = useState(false);
 
-  // -> Funcion que controla la altura del scrol
+  // -> Funcion que controla la altura del scroll
   function darPosicionDeScroll() {
     window.addEventListener("scroll", () => {
       setscrollPosicion(window.scrollY);
     });
   }
 
+  // -> Funcion que settea el cambio de width de la ventana
   function darWidthPantalla() {
     window.addEventListener('resize', () => {
       setWindowSize(window.innerWidth);
     });
   }
 
+  // -> Encargado de dar el width del inicio cuando carga la página
   useEffect(() => {
-    
-    console.log(window.innerWidth);
-
-    if (windowSize <= 1260 && windowSize != 0) {
-      setWindowSizeRespon(true);
-    } else {
-      setWindowSizeRespon(false);
-    }
-
+    setWindowSize(window.innerWidth);
   }, [])
 
   useEffect(() => {

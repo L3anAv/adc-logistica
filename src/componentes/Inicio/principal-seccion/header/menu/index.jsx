@@ -174,11 +174,14 @@ const OpenMenu = styled(Svg)`
 `;
 
 const Menu = () => {
-  // --> Variables de estado del componentes
+
+  // --> Estado
   const [menuCoA, setmenuCoA] = useState(true);
+  const [windowSize, setWindowSize] = useState(0);
   const [menuColor, setmenuColor] = useState(false);
   const [menuFixed, setmenuFixed] = useState(false);
   const [scrollPosicion, setscrollPosicion] = useState(0);
+  const [windowSizeRespon, setWindowSizeRespon] = useState(false);
 
   // -> Funcion que controla la altura del scrol
   function darPosicionDeScroll() {
@@ -195,6 +198,28 @@ const Menu = () => {
     }
     console.log(menuCoA);
   }
+
+  // -> Funcion que settea el cambio de width de la ventana
+  function darWidthPantalla() {
+    window.addEventListener('resize', () => {
+      setWindowSize(window.innerWidth);
+    });
+  }
+
+  // -> Encargado de dar el width del inicio cuando carga la página
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  }, [])
+
+  useEffect(() => {
+    darWidthPantalla();
+
+    if (windowSize <= 1260 && windowSize != 0) {
+      setWindowSizeRespon(true);
+    } else {
+      setWindowSizeRespon(false);
+    }
+  }, [windowSize]);
 
   useEffect(() => {
     darPosicionDeScroll();
@@ -216,10 +241,6 @@ const Menu = () => {
 
   return (
     <>
-    {/* Tendria que verificar el ancho que no supere cuando se vuelve menu hamburguesa
-        con estado verificarlo y no agregarlo, solo cuando esta en pantalla completa.
-        lo mimso que no cambie el color cuando baja si esta en pantalla completa.
-    */}
       {menuCoA == true ? (
         <OpenMenu
           colorMenu={menuColor == true ? "black" : "white"}
@@ -243,7 +264,7 @@ const Menu = () => {
       >
         {menuCoA == false ? (
           <CloseMenu
-            colorMenu={menuColor == true ? "black" : "white"}
+            colorMenu={menuColor == true && windowSizeRespon == false ? "black" : "white"}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 320 512"
             onClick={cerrarMenu}
@@ -258,15 +279,15 @@ const Menu = () => {
           {opcionesMenu.map((item) => (
             <ItemMenu
               ItemMenuBorder={
-                menuFixed == true && menuColor == true
+                menuFixed == true && menuColor == true && windowSizeRespon == false
                   ? "2px solid black"
                   : "2px solid white"
               }
               key={item.nombre}
             >
               <BotonItem
-                BotonWeight={menuFixed == true && menuColor == true ? "600" : ""}
-                BotonItemColor={menuFixed == true && menuColor == true ? "black" : "#fff"}
+                BotonWeight={menuFixed == true && menuColor == true && windowSizeRespon == false ? "600" : ""}
+                BotonItemColor={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "#fff"}
                 href={item.href}
               >
                 {item.nombre}
@@ -278,7 +299,7 @@ const Menu = () => {
         <SvgContainer>
           {/* Instragram */}
           <RedSocial
-            SvgFill={menuFixed == true && menuColor == true ? "black" : "white"}
+            SvgFill={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "white"}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
           >
@@ -287,7 +308,7 @@ const Menu = () => {
 
           {/* LinkedIn */}
           <RedSocial
-            SvgFill={menuFixed == true && menuColor == true ? "black" : "white"}
+            SvgFill={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "white"}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
           >
@@ -296,7 +317,7 @@ const Menu = () => {
 
           {/* Twitter */}
           <RedSocial
-            SvgFill={menuFixed == true && menuColor == true ? "black" : "white"}
+            SvgFill={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "white"}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
