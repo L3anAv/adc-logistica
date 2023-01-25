@@ -66,6 +66,7 @@ const BotonItem = styled.a`
   font-size: 0.9rem;
   font-family: FontMenu;
   text-decoration: none;
+  font-weight: ${(props) => props.BotonWeight || ""};
   color: ${(props) => props.BotonItemColor || "#fff"};
 
   @media (max-width: 945px) {
@@ -215,6 +216,10 @@ const Menu = () => {
 
   return (
     <>
+    {/* Tendria que verificar el ancho que no supere cuando se vuelve menu hamburguesa
+        con estado verificarlo y no agregarlo, solo cuando esta en pantalla completa.
+        lo mimso que no cambie el color cuando baja si esta en pantalla completa.
+    */}
       {menuCoA == true ? (
         <OpenMenu
           colorMenu={menuColor == true ? "black" : "white"}
@@ -260,9 +265,8 @@ const Menu = () => {
               key={item.nombre}
             >
               <BotonItem
-                BotonItemColor={
-                  menuFixed == true && menuColor == true ? "#000" : "#fff"
-                }
+                BotonWeight={menuFixed == true && menuColor == true ? "600" : ""}
+                BotonItemColor={menuFixed == true && menuColor == true ? "black" : "#fff"}
                 href={item.href}
               >
                 {item.nombre}

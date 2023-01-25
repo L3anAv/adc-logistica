@@ -151,10 +151,22 @@ const queHacemos = () => {
   }
 
   function darWidthPantalla() {
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       setWindowSize(window.innerWidth);
     });
   }
+
+  useEffect(() => {
+    
+    console.log(window.innerWidth);
+
+    if (windowSize <= 1260 && windowSize != 0) {
+      setWindowSizeRespon(true);
+    } else {
+      setWindowSizeRespon(false);
+    }
+
+  }, [])
 
   useEffect(() => {
     darPosicionDeScroll();
