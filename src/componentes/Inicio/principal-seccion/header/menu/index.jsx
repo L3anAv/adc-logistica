@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { opcionesMenu } from "../../../../../../public/json/infoAux";
+import { opcionesMenu } from "../../../../../../public/auxiliares/infoAux";
 
 /* Styled Components de menu -> */
 
@@ -232,7 +232,7 @@ const Menu = () => {
     }
 
     // -> Condicional que pone el cambio de color en el menu
-    if (scrollPosicion >= 582) {
+    if (scrollPosicion >= 555) {
       setmenuColor(true);
     } else {
       setmenuColor(false);
@@ -280,7 +280,7 @@ const Menu = () => {
             <ItemMenu
               ItemMenuBorder={
                 menuFixed == true && menuColor == true && windowSizeRespon == false
-                  ? "2px solid black"
+                  ? "2px solid #4a6bd9"
                   : "2px solid white"
               }
               key={item.nombre}

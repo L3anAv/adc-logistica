@@ -106,7 +106,7 @@ const header = () => {
     }
 
     // -> Condicional que pone el cambio de color en el menu
-    if (scrollPosicion >= 590) {
+    if (scrollPosicion >= 565) {
       setcontactoColor(true);
     } else {
       setcontactoColor(false);

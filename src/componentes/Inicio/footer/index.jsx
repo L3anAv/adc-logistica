@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Svg } from "../../styled-components-general/svg";
-import { opcionesMenu } from "../../../../public/json/infoAux";
+import { opcionesMenu } from "../../../../public/auxiliares/infoAux";
 
 const Footer = styled.footer`
   background: #23262b;
