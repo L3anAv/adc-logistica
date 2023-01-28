@@ -1,4 +1,4 @@
-import { Svg } from "../../../../styled-components-general/svg"
+import { Svg } from "../../../../../styled-components-general/svg"
 
 function grua() {
   return (

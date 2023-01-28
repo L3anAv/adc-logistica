@@ -1,6 +1,6 @@
 import { FondoDeSeccion } from "./fondo-inicio/fondo";
 import ContenidoCentral from "./contenido-central/index";
-import Header from "../../componentes-de-uso-general/header/index";
+import Header from "../../../componentes-de-uso-general/header/index";
 
 const principal = ({MenuOff}) => {
   return (

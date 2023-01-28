@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Principal from "./principal-seccion/index";
 import Formulario from "./seccion-formulario/index"
 import QueHacemos from "./seccion-que-hacemos-princip/index";
-import Footer from "../componentes-de-uso-general/footer/index";
+import Footer from "../../componentes-de-uso-general/footer/index"
 
 function index() {
   

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { svgManager } from "./svgs-icons/indexSvg"
-import fichas from "../../../../public/auxiliares/infoFichas"
-import { Titulo } from "../../styled-components-general/titulo-central";
+import fichas from "../../../../../public/auxiliares/infoFichas"
+import { Titulo } from "../../../styled-components-general/titulo-central";
 
 const ContenedorQueHacemos = styled.section`
   width: 100%;
