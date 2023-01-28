@@ -19,8 +19,8 @@ const ContenedorContacto = styled.div`
   animation: Titulo 1s;
 
   @media (max-width: 500px) {
-    flex-direction: column;
     margin-left: 2%;
+    flex-direction: column;
   }
 `;
 
@@ -83,7 +83,7 @@ const Titulo = styled.h1`
   }
 `;
 
-const header = () => {
+const header = ({MenuOff}) => {
   const [scrollPosicion, setscrollPosicion] = useState(0);
   const [contactoFixed, setcontactoFixed] = useState(false);
   const [contactoColor, setcontactoColor] = useState(false);
@@ -106,7 +106,7 @@ const header = () => {
     }
 
     // -> Condicional que pone el cambio de color en el menu
-    if (scrollPosicion >= 565) {
+    if (scrollPosicion >= 545) {
       setcontactoColor(true);
     } else {
       setcontactoColor(false);
@@ -178,7 +178,8 @@ const header = () => {
           </TextoContacto>
         </ContenedorContacto>
       </ContenedorPrincipal>
-      <Menu />
+
+      {MenuOff == false ? <Menu /> : ''}
     </>
   );
 };

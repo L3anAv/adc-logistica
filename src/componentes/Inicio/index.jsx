@@ -1,14 +1,41 @@
-import React from "react";
-import Principal from "./principal-seccion/index";
-import QueHacemos from "./seccion-que-hacemos-princip/index";
 import Footer from "./footer/index";
+import React, { useState } from "react";
+import Principal from "./principal-seccion/index";
+import Formulario from "./seccion-formulario/index"
+import QueHacemos from "./seccion-que-hacemos-princip/index";
 
 function index() {
+  
+  const [menuOff, setMenuOff] = useState(false)
+  
+  function finalDePagina(){
+
+    window.addEventListener('scroll', () =>{
+
+      let alturaDeDocumento = document.body.scrollHeight
+      let scrollRecorrido = window.pageYOffset
+      let viewport = window.innerHeight
+
+      console.log(alturaDeDocumento)
+      console.log(scrollRecorrido + viewport)
+
+      if(scrollRecorrido + viewport >= (alturaDeDocumento - 200)){
+        setMenuOff(true)
+      }else{
+        setMenuOff(false)
+      }
+    })
+  
+  }
+
   return (
     <>
-      <Principal />
+      <div onScroll={finalDePagina()} id="contenedorInicial">
+      <Principal MenuOff={menuOff}/>
       <QueHacemos />
+      <Formulario />
       <Footer />
+      </div>
     </>
   );
 }

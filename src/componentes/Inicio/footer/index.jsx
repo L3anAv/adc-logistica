@@ -5,7 +5,7 @@ import { Svg } from "../../styled-components-general/svg";
 import { opcionesMenu } from "../../../../public/auxiliares/infoAux";
 
 const Footer = styled.footer`
-  background: #23262b;
+  background: linear-gradient(180deg, rgba(27,31,38,1) 23%, rgba(15,17,22,1) 100%);
 `;
 
 const ContenedorPrincipalFooter = styled.div`

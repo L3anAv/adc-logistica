@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const SeccionPrincipal = styled.section`
   widht: 100%;
-  margin-bottom: 11%;
+  margin-bottom: 6%;
 
   @media (max-width: 945px) {
     margin-top: 18%;

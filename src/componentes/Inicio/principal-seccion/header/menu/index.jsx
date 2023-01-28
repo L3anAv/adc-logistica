@@ -183,6 +183,18 @@ const Menu = () => {
   const [scrollPosicion, setscrollPosicion] = useState(0);
   const [windowSizeRespon, setWindowSizeRespon] = useState(false);
 
+  // -> Funcion que settea el cambio de width de la ventana
+  function darWidthPantalla() {
+    window.addEventListener('resize', () => {
+      setWindowSize(window.innerWidth);
+    });
+  }
+
+  // -> Encargado de dar el width del inicio cuando carga la página
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  }, [])
+
   // -> Funcion que controla la altura del scrol
   function darPosicionDeScroll() {
     window.addEventListener("scroll", () => {
@@ -196,25 +208,12 @@ const Menu = () => {
     } else {
       setmenuCoA(false);
     }
-    console.log(menuCoA);
   }
-
-  // -> Funcion que settea el cambio de width de la ventana
-  function darWidthPantalla() {
-    window.addEventListener('resize', () => {
-      setWindowSize(window.innerWidth);
-    });
-  }
-
-  // -> Encargado de dar el width del inicio cuando carga la página
-  useEffect(() => {
-    setWindowSize(window.innerWidth);
-  }, [])
 
   useEffect(() => {
     darWidthPantalla();
 
-    if (windowSize <= 1260 && windowSize != 0) {
+    if (windowSize <= 945 && windowSize != 0) {
       setWindowSizeRespon(true);
     } else {
       setWindowSizeRespon(false);
@@ -232,11 +231,12 @@ const Menu = () => {
     }
 
     // -> Condicional que pone el cambio de color en el menu
-    if (scrollPosicion >= 555) {
+    if (scrollPosicion >= 525) {
       setmenuColor(true);
-    } else {
+    }else{
       setmenuColor(false);
     }
+
   }, [scrollPosicion]);
 
   return (
@@ -255,7 +255,7 @@ const Menu = () => {
       )}
 
       <NavWeb
-        navWebTop={menuFixed == true ? "8px" : ""}
+        navWebTop={menuFixed == true ? "16px" : ""}
         navToggle={menuCoA == true ? "-100%" : "0"}
         navWebWidth={menuFixed == true ? "100%" : ""}
         navWebColor={menuFixed == true ? "#000" : "#fff"}

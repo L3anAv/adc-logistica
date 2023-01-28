@@ -2,11 +2,11 @@ import Header from "./header/index";
 import ContenidoCentral from "./contenido-central/index";
 import { FondoDeSeccion } from "./fondo-inicio/fondo";
 
-const principal = () => {
+const principal = ({MenuOff}) => {
   return (
     <>
       <FondoDeSeccion />
-      <Header />
+      <Header MenuOff={MenuOff}/>
       <ContenidoCentral />
     </>
   );

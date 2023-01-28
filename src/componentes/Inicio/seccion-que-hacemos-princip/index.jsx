@@ -8,7 +8,7 @@ const ContenedorQueHacemos = styled.section`
   width: 100%;
   display: grid;
   overflow: hidden;
-  margin-bottom: 5%;
+  margin-bottom: 12%;
   background:#fdfdfd;
   justify-content: center;
   grid-template-columns: 15% 35% 35% 15%;
@@ -23,7 +23,7 @@ const ContenedorQueHacemos = styled.section`
 
 const TituloSeccion = styled(Titulo)`
   grid-row: 1/2;
-  margin-top: 12%;
+  margin-top: 11%;
   grid-column: 2/4;
   aling-self: center;
   justify-self: center;
