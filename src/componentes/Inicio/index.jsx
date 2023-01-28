@@ -1,8 +1,8 @@
-import Footer from "./footer/index";
 import React, { useState } from "react";
 import Principal from "./principal-seccion/index";
 import Formulario from "./seccion-formulario/index"
 import QueHacemos from "./seccion-que-hacemos-princip/index";
+import Footer from "../componentes-de-uso-general/footer/index";
 
 function index() {
   
@@ -15,9 +15,6 @@ function index() {
       let alturaDeDocumento = document.body.scrollHeight
       let scrollRecorrido = window.pageYOffset
       let viewport = window.innerHeight
-
-      console.log(alturaDeDocumento)
-      console.log(scrollRecorrido + viewport)
 
       if(scrollRecorrido + viewport >= (alturaDeDocumento - 200)){
         setMenuOff(true)

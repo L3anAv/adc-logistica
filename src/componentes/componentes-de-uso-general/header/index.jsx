@@ -1,7 +1,7 @@
 import Menu from "./menu/index";
-import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Svg } from "../../../styled-components-general/svg";
+import { useState, useEffect } from "react";
+import { Svg } from "../../styled-components-general/svg";
 
 const ContenedorPrincipal = styled.div`
   width: 100%;

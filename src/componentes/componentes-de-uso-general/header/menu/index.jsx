@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { opcionesMenu } from "../../../../../../public/auxiliares/infoAux";
+import { opcionesMenu } from "../../../../../public/auxiliares/infoAux";
 
 /* Styled Components de menu -> */
 
