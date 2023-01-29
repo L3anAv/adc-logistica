@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { opcionesMenu } from "../../../../../public/auxiliares/infoAux";
 
@@ -9,8 +10,8 @@ const NavWeb = styled.nav`
   display: flex;
   opacity: 100%;
   list-style-type: none;
-  animation: all 0.7s MenuAparicion;
   justify-content: space-between;
+  animation: 0.7s MenuAparicion;
   top: ${(props) => props.navWebTop || "0"};
   width: ${(props) => props.navWebWidth || "auto"};
   position: ${(props) => props.navWebPosition || "none"};
@@ -62,7 +63,7 @@ const ItemMenu = styled.li`
   }
 `;
 
-const BotonItem = styled.a`
+const BotonItem = styled(Link)`
   font-size: 0.9rem;
   font-family: FontMenu;
   text-decoration: none;
@@ -157,10 +158,12 @@ const OpenMenu = styled(Svg)`
     position: fixed;
     display: inline;
     font-size: 1.2rem;
+    
 
     path {
       fill: ${(props) => props.colorMenu || "white"};
       fill-rule: evenodd;
+      border:1px solid black;
     }
   }
 
@@ -288,7 +291,7 @@ const Menu = () => {
               <BotonItem
                 BotonWeight={menuFixed == true && menuColor == true && windowSizeRespon == false ? "600" : ""}
                 BotonItemColor={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "#fff"}
-                href={item.href}
+                to={item.href}
               >
                 {item.nombre}
               </BotonItem>

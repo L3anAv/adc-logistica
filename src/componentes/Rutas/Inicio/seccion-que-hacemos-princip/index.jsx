@@ -32,6 +32,7 @@ const TituloSeccion = styled(Titulo)`
     color: #fff;
   }
 `;
+
 const MenuServicios = styled.nav`
   height: 50px;
   grid-row: 2/3;
@@ -194,7 +195,6 @@ const queHacemos = () => {
           </UlMenuServ>
         </MenuServicios>
 
-
         {
           fichas[indexData].map((info, index) => (
           <FichaServicio fichaColum={windowSizeRespon == true ? `${info.ColumnResponsive}` : `${info.Colum}`}
@@ -214,48 +214,6 @@ const queHacemos = () => {
           ))
         }
 
-        { /*
-     
-
-        <FichaServicio
-          fichaColum={windowSizeRespon == true ? "2/4" : "3/4"}
-          fichaRow={windowSizeRespon == true ? "5/6" : "3/4"}
-        >
-          
-
-          <UlFicha>
-            <LiFicha> - Acarreo de autos/maquinaria. </LiFicha>
-          </UlFicha>
-
-          <Boton>Solicitar servicio &#62; &#62;</Boton>
-        </FichaServicio>
-
-        <FichaServicio
-          fichaColum={windowSizeRespon == true ? "2/4" : "2/3"}
-          fichaRow={windowSizeRespon == true ? "6/7" : "4/5"}
-        >
-          
-
-          <UlFicha>
-            <LiFicha> - Desagotes. </LiFicha>
-          </UlFicha>
-
-          <Boton>Solicitar servicio &#62;&#62;</Boton>
-        </FichaServicio>
-
-        <FichaServicio
-          fichaColum={windowSizeRespon == true ? "2/4" : "3/4"}
-          fichaRow={windowSizeRespon == true ? "7/8" : "4/5"}
-        >
-
-
-          <UlFicha>
-            <LiFicha> - Volquetes. </LiFicha>
-          </UlFicha>
-
-          <Boton>Solicitar servicio &#62;&#62;</Boton>
-    </FichaServicio>
-  */ }
       </ContenedorQueHacemos>
     </>
   );

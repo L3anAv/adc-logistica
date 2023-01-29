@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const FondoDeSeccion = styled.div`
+const FondoDeSeccion = styled.div`
   width: 100%;
-  height: 638px;
+  height: ${props => props.height};
   background: url(${props => props.urlFondo});
   background-repeat: no-repeat;
   background-position: center;
@@ -10,7 +10,7 @@ export const FondoDeSeccion = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  z-index: -2;
+  z-index: -1;
 
   :after {
     content: "";
@@ -28,3 +28,5 @@ export const FondoDeSeccion = styled.div`
     );
   }
 `;
+
+export default FondoDeSeccion
