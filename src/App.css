@@ -72,6 +72,41 @@
   }
 }
 
+@keyframes Aparicion {
+  
+  0% {
+    opacity: 0;
+  }
+
+  40%{
+    opacity: 0;
+  }
+
+  45%{
+    opacity: 10%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  70% {
+    opacity: 60%;
+  }
+
+  75% {
+    opacity: 70%;
+  }
+
+  85% {
+    opacity: 85%;
+  }
+
+  100%{
+    opacity: 100%;
+  }
+}
+
 @keyframes Titulo {
   
   0% {

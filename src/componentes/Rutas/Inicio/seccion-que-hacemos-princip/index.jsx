@@ -77,8 +77,8 @@ const FichaServicio = styled.div`
   border: 1px solid;
   margin-bottom: 4%;
   border-radius: 10px;
-  grid-row: ${(props) => props.fichaRow};
-  grid-column: ${(props) => props.fichaColum};
+  grid-row: ${props => props.fichaRow};
+  grid-column: ${props => props.fichaColum};
 
   @media (max-width: 640px) {
     grid:

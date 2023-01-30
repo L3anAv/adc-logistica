@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom"
 import { useState,useEffect } from 'react'
 import Header from '../../componentes-de-uso-general/header/index'
 import Footer from '../../componentes-de-uso-general/footer/index'
@@ -18,6 +18,7 @@ const TituloPrincipal = styled.h2`
   margin-left:20%;
   jusitfy-self:center;
   font-family:TituloPrincipal;
+  animation:1s Aparicion linear;
   display:${props => props.display};
 
   @media (max-width: 600px) {
@@ -79,12 +80,12 @@ const ArticuloCentral = styled.article`
     margin-top:100px;
     font-size:0.9rem;
     margin-bottom:100px;
+    text-align: justify;
     flex-direction:column;
     font-family:SubTituloPrincipal;
 
     p {
         margin-top:18px;
-        text-aling:justify;
     }
 `
 
@@ -120,6 +121,10 @@ function quienesSomos() {
     const [animacion, setanimacion] = useState(false)
     const [altoDeFondo, setaltoDeFondo] = useState(300)
     const [scrollPosicion, setscrollPosicion] = useState(0);
+
+    function moverAlTopAlHacerClick(){
+      window.scrollTo(0,0)
+    }
 
     function finalDePagina(){
 
@@ -174,7 +179,7 @@ function quienesSomos() {
             <p>Somos una empresa joven de transporte enfocada en brindar a nuestros clientes la mejor relación costo-beneficio en el área de transporte de cargas. Para ello, ponemos a su disposición servicios de inigualable calidad, que les permitirá obtener notables ventajas competitivas.</p>
             <p>Los años de experiencia constituyen el mejor respaldo de nuestra excelente capacidad de respuesta y nuestros inmejorables tiempos. Nuestra Tecnología y calidad están certificadas bajo normas ISO 9001. <br />Además, contamos con permisos provinciales, nacionales e internacionales que nos habilitan para circular y trasladar distintos tipos de mercadería/otros.Nuestra permanencia y vigencia en el mercado se explican por el valioso grupo humano que conforma la empresa: nuestros profesionales se desempeñan con acierto y celeridad en cada circunstancia, dando cuenta de una eximia capacidad de resolución.</p>
             <p>Como empresa líder en el rubro, nuestra meta principal es logar la completa satisfacción de nuestros clientes, para cumplirla, trabajamos atentos a sus necesidades con honestidad, sensatez y sobre todo eficiencia.</p>
-            <Boton to="/servicios">NUESTROS SERVICIOS</Boton>
+            <Boton to="/servicios" onClick={moverAlTopAlHacerClick}>NUESTROS SERVICIOS</Boton>
         </ArticuloCentral>
         </InformacionCentral>
       </ContenidoDeQuienesSomos>

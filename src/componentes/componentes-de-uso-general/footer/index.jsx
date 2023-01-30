@@ -169,6 +169,11 @@ const PieDePagina = styled.div`
 `;
 
 function footer() {
+
+  function moverAlTopAlHacerClick(){
+    window.scrollTo(0,0)
+  }
+
   return (
     <>
       <Footer>
@@ -179,7 +184,7 @@ function footer() {
             <UlMenu>
               {opcionesMenu.map((item) => (
                 <LiMenu key={item.nombre}>
-                  <LinkRef to={item.href}>{item.nombre}</LinkRef>
+                  <LinkRef to={item.href} onClick={moverAlTopAlHacerClick}>{item.nombre}</LinkRef>
                 </LiMenu>
               ))}
             </UlMenu>

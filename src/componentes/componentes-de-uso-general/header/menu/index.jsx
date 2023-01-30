@@ -186,6 +186,10 @@ const Menu = () => {
   const [scrollPosicion, setscrollPosicion] = useState(0);
   const [windowSizeRespon, setWindowSizeRespon] = useState(false);
 
+  function moverAlTopAlHacerClick(){
+    window.scrollTo(0,0)
+  }
+
   // -> Funcion que settea el cambio de width de la ventana
   function darWidthPantalla() {
     window.addEventListener('resize', () => {
@@ -292,6 +296,7 @@ const Menu = () => {
                 BotonWeight={menuFixed == true && menuColor == true && windowSizeRespon == false ? "600" : ""}
                 BotonItemColor={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "#fff"}
                 to={item.href}
+                onClick={moverAlTopAlHacerClick}
               >
                 {item.nombre}
               </BotonItem>
