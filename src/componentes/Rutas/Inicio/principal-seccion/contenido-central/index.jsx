@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 
 const SeccionPrincipal = styled.section`
   widht: 100%;
@@ -99,7 +100,7 @@ const BotonNuestrosServicios = styled.button`
   }
 `;
 
-const LinkContenido = styled.a`
+const LinkContenido = styled(Link)`
   color: #fff;
   display: flex;
   font-size: 1.125rem;
@@ -125,8 +126,8 @@ const contenidoCentral = () => {
           SERVICIOS LOGISTICOS & ALQUILER DE MAQUINARIAS
         </TituloCentral>
         <Subtitulo>Prestamos servicio a empresas y particulares.</Subtitulo>
-        <BotonNuestrosServicios>
-          <LinkContenido href="/que-hacemos">
+        <BotonNuestrosServicios >
+          <LinkContenido to={"/servicios"}>
             CONOCER MÁS... <Span>&#62;</Span>
           </LinkContenido>
         </BotonNuestrosServicios>

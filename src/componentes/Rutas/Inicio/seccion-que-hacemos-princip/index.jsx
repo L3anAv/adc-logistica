@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { svgManager } from "./svgs-icons/indexSvg"
 import fichas from "../../../../../public/auxiliares/infoFichas"
@@ -114,7 +115,7 @@ const LiFicha = styled.li`
   }
 `;
 
-const Boton = styled.button`
+const BotonServicio = styled.button`
   color: #000;
   padding: 6px;
   font-size: 15px;
@@ -124,6 +125,35 @@ const Boton = styled.button`
   border-radius: 5px;
   font-family: FontMenu;
 `;
+
+const Boton = styled(Link)`
+  margin-left:150px;
+  margin-right:150px;
+  height:40px;
+  color: #fff;
+  margin-top:46px;
+  cursor: pointer;
+  font-size:0.8rem;
+  line-height: 40px;
+  border-radius: 5px;
+  background: #3d5bcc;
+  font-family: FontMenu;
+  text-align-last: center;
+  grid-row: ${props => props.botonRow};
+  grid-column: ${props => props.botonColum};
+
+    :hover {
+    background: #294198;
+    }
+
+    @media (max-width: 1270px) {
+      font-size:0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      margin-top: 6%;
+    }
+`
 
 const queHacemos = () => {
 
@@ -152,6 +182,10 @@ const queHacemos = () => {
     window.addEventListener('resize', () => {
       setWindowSize(window.innerWidth);
     });
+  }
+
+  function moverAlTopAlHacerClick(){
+    window.scrollTo(0,0)
   }
 
   // -> Encargado de dar el width del inicio cuando carga la página
@@ -209,11 +243,11 @@ const queHacemos = () => {
               ))}
             </UlFicha>
 
-            <Boton>Solicitar servicio &#62;&#62;</Boton>
+            <BotonServicio>Solicitar servicio &#62;&#62;</BotonServicio>
           </FichaServicio>
           ))
         }
-
+         <Boton botonRow={windowSizeRespon == true ? '8/9': '5/6'} botonColum={windowSizeRespon == true ? '2/4': '2/4'} to="/servicios" onClick={moverAlTopAlHacerClick}>VER TODOS NUESTROS SERVICIOS</Boton>
       </ContenedorQueHacemos>
     </>
   );

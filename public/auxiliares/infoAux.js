@@ -1,9 +1,9 @@
 
 /* Opciones de menu -> */
 export const opcionesMenu = [
-  { nombre: "INICIO", href: "/" },
-  { nombre: "QUIENES SOMOS", href: "/quienes-somos" },
-  { nombre: "SERVICIOS", href: "/servicios" },
-  { nombre: "CONTACTO", href: null },
-  { nombre: "PREGUNTAS FRECUENTES", href: "/preguntas-frecuentes" },
+  { nombre: "INICIO", href: "/", id: 'inicio'},
+  { nombre: "QUIENES SOMOS", href: "/quienes-somos", id: 'quienes-somos'},
+  { nombre: "SERVICIOS", href: "/servicios", id: 'servicios'},
+  { nombre: "CONTACTO", href: "/", id: 'contacto'},
+  { nombre: "PREGUNTAS FRECUENTES", href: "/preguntas-frecuentes", id: 'preguntas'}
 ]

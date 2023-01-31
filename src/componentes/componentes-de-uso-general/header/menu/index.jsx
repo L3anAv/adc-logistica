@@ -6,7 +6,7 @@ import { opcionesMenu } from "../../../../../public/auxiliares/infoAux";
 /* Styled Components de menu -> */
 
 const NavWeb = styled.nav`
-  height: 35px;
+  height: 28px;
   display: flex;
   opacity: 100%;
   list-style-type: none;
@@ -46,10 +46,10 @@ const UlMenu = styled.ul`
 
 const ItemMenu = styled.li`
   color: #fff;
-  user-select: none;
+  user-select: none;  
   padding-left: 12px;
   padding-right: 12px;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
   text-decoration: none;
 
   :hover {
@@ -65,8 +65,8 @@ const ItemMenu = styled.li`
 
 const BotonItem = styled(Link)`
   font-size: 0.9rem;
-  font-family: FontMenu;
   text-decoration: none;
+  font-family: FontMenu;
   font-weight: ${(props) => props.BotonWeight || ""};
   color: ${(props) => props.BotonItemColor || "#fff"};
 
@@ -178,6 +178,8 @@ const OpenMenu = styled(Svg)`
 
 const Menu = () => {
 
+  const agregarOnClick = true
+
   // --> Estado
   const [menuCoA, setmenuCoA] = useState(true);
   const [windowSize, setWindowSize] = useState(0);
@@ -200,7 +202,24 @@ const Menu = () => {
   // -> Encargado de dar el width del inicio cuando carga la página
   useEffect(() => {
     setWindowSize(window.innerWidth);
+    IrhastaFormulario()
   }, [])
+
+
+  function IrhastaFormulario(){
+    let elementContacto = document.getElementById('contacto')
+    
+    elementContacto.addEventListener('click', () => {
+
+      let alturaDeDocumento = document.body.scrollHeight
+      let movimiento = alturaDeDocumento-1370
+
+      if(windowSize >= 900 && window.location.pathname == '/'){
+        window.scrollTo(0, movimiento)
+      }
+      
+    })
+  }
 
   // -> Funcion que controla la altura del scrol
   function darPosicionDeScroll() {
@@ -293,10 +312,11 @@ const Menu = () => {
               key={item.nombre}
             >
               <BotonItem
+                id={item.id}
+                to={item.href}
+                onClick={item.id === 'contacto' ? IrhastaFormulario : moverAlTopAlHacerClick }
                 BotonWeight={menuFixed == true && menuColor == true && windowSizeRespon == false ? "600" : ""}
                 BotonItemColor={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "#fff"}
-                to={item.href}
-                onClick={moverAlTopAlHacerClick}
               >
                 {item.nombre}
               </BotonItem>

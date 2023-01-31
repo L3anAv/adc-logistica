@@ -134,7 +134,7 @@ function servicios() {
           
           <TituloServicios>Tranporte</TituloServicios>
 
-          <Img src="public/images/transporte de cargas.jpeg" marginTop={'40'}/>
+          <Img src="public/images/transporte-de-cargas.jpeg" marginTop={'40'}/>
 
           <p>
             Realizamos transporte en general con una flota de camiones,

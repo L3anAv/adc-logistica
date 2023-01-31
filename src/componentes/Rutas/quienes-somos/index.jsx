@@ -133,7 +133,7 @@ function quienesSomos() {
           let alturaDeDocumento = document.body.scrollHeight
           let scrollRecorrido = window.pageYOffset
           let viewport = window.innerHeight
-          console.log(scrollRecorrido)
+          
           if(scrollRecorrido + viewport >= (alturaDeDocumento - 520)){
             setMenuOff(true)
           }else{

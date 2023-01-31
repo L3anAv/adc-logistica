@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useState, useEffect } from 'react'
 import { Formik, Form, Field } from 'formik'
 
 const SeccionFormulario = styled.div`
@@ -69,13 +70,10 @@ const Input = styled(Field)`
 const TextArea = styled(Input)`
     height:150px;
     resize: none;
-    margin-bottom:12%;
 `
 
 const Opciones = styled(Input)`
     color: #000;
-    font:FontMenu;
-    font-size: 1.1rem;
     background-color: #eee;
 
     @media (max-width: 500px) {
@@ -87,6 +85,7 @@ const ContenedorInputLabel = styled.div`
    display:flex;
    flex-direction:column;
 `
+
 const Label = styled.label`
     color:#fff;
     margin-top:20px;
@@ -99,7 +98,83 @@ const Label = styled.label`
     }
 `
 
+const LabelInfo = styled(Label)`
+    margin-left:4%;
+    font-size:0.8rem;
+`
+
+const LabelRetiro = styled(Label)`
+    display:${props => props.display};
+`
+
+const FieldRetiro = styled(Input)`
+    display:${props => props.display};
+`
+
+const Boton = styled.button`
+    
+    height:40px;
+    color: #fff;
+    margin-top:46px;
+    cursor: pointer;
+    font-size:0.8rem;
+    border-radius: 5px;
+    margin-bottom:20%;
+    background: #3d5bcc;
+    font-family: FontMenu;
+    text-align-last: center;
+    :hover {
+    background: #294198;
+    }
+
+    @media (max-width: 1270px) {
+      font-size:0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      margin-top: 6%;
+    }
+`
+
 function formulario() {
+
+    const [opcionValue,setopcionValue] = useState('')
+    const [OcultarField,setocultarField] = useState(false)
+    const [currentDay, setcurrentDay] = useState('00/00/0000')
+
+    function obtenerDiaActual(){
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+    setcurrentDay(today)
+    }
+
+    function hadleSubmit(values){
+        let opciones = document.getElementById('opciones')
+        let mensaje = document.getElementById('mensaje')
+        values.opciones = opciones.value
+        values.mensaje = mensaje.value
+        console.log(values)
+    }
+
+    function obtenerValorSelect(e){
+
+        const origenDestino = ["Flete", "Acarreo", "Transporte"]
+
+        if(!origenDestino.includes(e.target.value)){
+            setocultarField(true)
+        }else{
+            setocultarField(false)
+        }
+    }
+
+    useEffect(() => {
+        obtenerDiaActual()
+    }, [])
+
   return (
     <>
         <SeccionFormulario>
@@ -107,24 +182,33 @@ function formulario() {
             <Formik
                 initialValues={{
                     correo: '',
-                    motivo: '',
-                    mensaje: ''
+                    fecha:`${currentDay}`,
+                    retiro:'',
+                    entrega:'',
+                    telefono:'',
+                    mensaje: '',
+                    opciones: `${opcionValue}`
                 }}
+                onSubmit={hadleSubmit}
             >
                 <Formulario>
+                    <LabelInfo htmlFor="opcionales">(*) Opcionales</LabelInfo>
                     <ContenedorInputLabel>
-                        <Label htmlFor="correo">Correo</Label>
-                        <Input name="correo" type="text" />
+                        <Label htmlFor="correo">Correo (*)</Label>
+                        <Input placeholder="correo@email.com" name="correo" type="text" />
+                        <Label htmlFor="Telefono">Numero de teléfono (Whatsapp)</Label>
+                        <Input placeholder="11-xxxx-xxxx" name="telefono" type="text" />
                     </ContenedorInputLabel>
                     <ContenedorInputLabel>
                         <Label htmlFor="motivo">Motivo de contacto</Label>
-                        <Opciones as="select" name="motivo">
+                        <Opciones id="opciones" onChange={obtenerValorSelect} as="select" name="opciones">
                             <option value="Flete">Flete</option>
+                            <option value="Acarreo">Acarreo</option>
                             <option value="Desagote">Desagote</option>
                             <option value="Volquete">Volquete</option>
                             <option value="Acarreo">Acarreo de maquinaria</option>
-                            <option value="Transporte general">Transporte de cargas generales</option>
-                            <option value="Transporte peligroso">Transporte de cargas peligrosas</option>
+                            <option value="Transporte">Transporte de cargas generales</option>
+                            <option value="Transporte">Transporte de cargas peligrosas</option>
                             <option value="Bobcat">Bobcat</option>
                             <option value="Baños químicos">Baños químicos</option>
                             <option value="Autoelevadores">Autoelevadores</option>
@@ -134,9 +218,20 @@ function formulario() {
                         </Opciones>
                     </ContenedorInputLabel>
                     <ContenedorInputLabel>
-                        <Label htmlFor="mensaje">Mensaje</Label>
-                        <TextArea as="textarea" name="mensaje" />
+                        <Label htmlFor="mensaje">Fecha para servicio</Label>
+                        <Input type="date" name="fecha" />
                     </ContenedorInputLabel>
+                    <ContenedorInputLabel>
+                        <Label htmlFor="entrega">Lugar de Entrega</Label>
+                        <Input placeholder="Direccion, Ciudad, Partido" name="entrega" type="text" />
+                        <LabelRetiro  display={OcultarField == true ? 'none' : 'inline'} htmlFor="retiro">Lugar de Retiro (Destino de busqueda)</LabelRetiro>
+                        <FieldRetiro display={OcultarField == true ? 'none' : 'inline'} placeholder="Direccion, Ciudad, Partido" name="retiro" type="text" />
+                    </ContenedorInputLabel>
+                    <ContenedorInputLabel>
+                        <Label htmlFor="mensaje">Mensaje (*)</Label>
+                        <TextArea id="mensaje" placeholder="Mensaje complementario" as="textarea" name="mensaje" type="text" />      
+              </ContenedorInputLabel>
+                    <Boton type="submit" >Enviar</Boton>
                 </Formulario>
             </Formik>
         </SeccionFormulario>
