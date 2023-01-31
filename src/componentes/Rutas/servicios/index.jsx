@@ -71,9 +71,14 @@ const TituloServicios = styled(TituloSeccion)`
 const UlListado = styled.ul`
   margin-top: 15px;
   margin-bottom: 18px;
+
+  p{
+    margin-bottom:30px;
+  }
 `;
 
 const LiListado = styled.li`
+  margin-top:10px;
   margin-left: 30px;
 `;
 
@@ -141,7 +146,7 @@ function servicios() {
             camionetas y semis.
           </p>
           <UlListado>
-            <p>Nos encargamos de:</p>
+            <p>Hacemos transporte de:</p>
             <LiListado> - Cargas generales.</LiListado>
             <LiListado> - Cargas peligrosas. </LiListado>
             <LiListado> - Mudanzas y Fletes.</LiListado>
@@ -157,7 +162,7 @@ function servicios() {
             utilidades.
           </p>
           <UlListado>
-            <p>Nos encargamos de:</p>
+            <p>Alquieres/Servicio de:</p>
             <LiListado> - Bobcat</LiListado>
             <LiListado> - Desagotes </LiListado>
             <LiListado> - Volquetes </LiListado>
@@ -169,7 +174,7 @@ function servicios() {
           <TituloServicios>Cobertura de Nuestros Servicios</TituloServicios>
 
           <UlListado>
-            <p>Nos encargamos de:</p>
+            <p>Nuestra cobertura para los servicios son:</p>
             <LiListado> - Capital Federal</LiListado>
             <LiListado> - Interior del País </LiListado>
             <LiListado> - Frecuencia semanal a Misiones</LiListado>
