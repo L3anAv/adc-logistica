@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useState, useEffect } from 'react'
 
 const ContenedorImagenes = styled.div`
   display:flex;
@@ -14,14 +15,14 @@ const CotenedorTitulo = styled.div`
   display:flex;
   overflow:hidden;
   justify-content:center;
+  animation:${props => props.animation};
 `
 
 const TituloPrincipal = styled.h2`
   z-index:1;
   font-size:3rem;
-  color:#5b5b5b;
   jusitfy-self:center;
-  font-family:FontMenu;
+  font-family:TituloPrincipal;
   animation:1s Aparicion linear;
 
   @media (max-width: 600px) {
@@ -49,6 +50,28 @@ const Img = styled.img`
 `
 
 function seccionMarcas() {
+
+  const [animacion, setAnimacion] = useState(false)
+  const [scrollPosicion, setscrollPosicion] = useState(0);
+
+    // -> Funcion que controla la altura del scrol
+    function darPosicionDeScroll() {
+      window.addEventListener("scroll", () => {
+      setscrollPosicion(window.scrollY);
+      console.log(window.scrollY)
+      });
+  }
+
+  useEffect(() => {
+      darPosicionDeScroll();
+
+      // -> Condicional que pone el menu en fixed
+      if (scrollPosicion >= 800){
+          setAnimacion(true)
+      }
+
+    }, [scrollPosicion]);
+
   return (
     <>
        <CotenedorTitulo>
@@ -61,5 +84,4 @@ function seccionMarcas() {
     </>
   )
 }
-
 export default seccionMarcas

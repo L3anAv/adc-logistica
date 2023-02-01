@@ -209,7 +209,7 @@ const queHacemos = () => {
     // -> Condicional que pone el menu en fixed
     if (scrollPosicion >= 77) {
       setMenuEstaFixed(true);
-    } else {
+    }else {
       setMenuEstaFixed(false);
     }
   }, [scrollPosicion]);
