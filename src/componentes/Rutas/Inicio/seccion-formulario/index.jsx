@@ -105,6 +105,19 @@ const Label = styled.label`
     }
 `
 
+const EnviadoMensaje = styled(Label)`
+    color:#fff;
+    margin-left:0;
+    margin-top:8px;
+    padding-top:3px;
+    font-size:1.2rem;
+    border-radius:6px;
+    margin-bottom:12%;
+    padding-left:175px;
+    background:#449d44;
+    font-family:FontMenu;
+`
+
 const LabelInfo = styled(Label)`
     margin-left:4%;
     font-size:0.8rem;
@@ -122,11 +135,11 @@ const Boton = styled.button`
     
     height:40px;
     color: #fff;
-    margin-top:46px;
+    margin-top:20px;
     cursor: pointer;
     font-size:0.8rem;
+    margin-bottom:4%;
     border-radius: 5px;
-    margin-bottom:20%;
     background: #3d5bcc;
     font-family: FontMenu;
     text-align-last: center;
@@ -145,8 +158,8 @@ const Boton = styled.button`
 
 function formulario() {
 
-    const [opcionValue,setopcionValue] = useState('')
     const [OcultarField,setocultarField] = useState(false)
+    const [mensajeEnviado, setmensajeEnviado] = useState(false)
     const [currentDay, setcurrentDay] = useState('00/00/0000')
 
     function obtenerDiaActual(){
@@ -176,6 +189,10 @@ function formulario() {
             opciones: values.opciones
         })
         })
+
+        if(res.status == 200){
+            setmensajeEnviado(true)
+        }
         let data = await res.json()
         console.log(data)
     }
@@ -188,6 +205,38 @@ function formulario() {
         postData(values)
         //console.log(values)
     }
+
+    function validadorDeCampos(values){
+        
+        const err = {}
+        const fechaActual = new Date()
+        const fecha = new Date(currentDay)
+        const mensajeErr = 'Por favor ingrese una direccion.'
+        const fechaUsuarioIngresada = new Date(values.fecha)
+        const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        
+        if(values.telefono.length < 10){
+            err.telefono = 'El telefono debe contener 10 dígitos. (Celular con Whastapp)'
+        }
+
+        if(!pattern.test(values.correo) && values.correo.length != 0){
+            err.correo = 'Ingrese un correo valido: correo@host.com'
+        }
+
+        if(fechaUsuarioIngresada <= fechaActual || fechaUsuarioIngresada === fecha){
+            err.fecha = 'Por Favor, ingrese una fecha valida.'
+        }
+
+        if(values.retiro.length <= 0 && !OcultarField){
+            err.retiro = mensajeErr
+        }
+
+        if(values.entrega.length <= 0){
+            err.entrega = mensajeErr
+        }
+
+        return err;
+}
 
     function obtenerValorSelect(e){
 
@@ -216,20 +265,23 @@ function formulario() {
                     entrega:'',
                     telefono:'',
                     mensaje: '',
-                    opciones: `${opcionValue}`
+                    opciones: ``
                 }}
                 onSubmit={(values, {resetForm}) => {
                     hadleSubmit(values)
                     resetForm({ values: '' })
                 }}
+                validate={validadorDeCampos}
             >
                 <Formulario>
                     <LabelInfo htmlFor="opcionales">(*) Opcionales</LabelInfo>
                     <ContenedorInputLabel>
                         <Label htmlFor="correo">Correo (*)</Label>
                         <Input placeholder="correo@email.com" name="correo" type="text" />
+                        <Error><ErrorMessage name="correo"/></Error>
                         <Label htmlFor="Telefono">Numero de teléfono (Whatsapp)</Label>
                         <Input placeholder="11-xxxx-xxxx" name="telefono" type="text" />
+                        <Error><ErrorMessage name="telefono"/></Error>
                     </ContenedorInputLabel>
                     <ContenedorInputLabel>
                         <Label htmlFor="motivo">Motivo de contacto</Label>
@@ -252,18 +304,22 @@ function formulario() {
                     <ContenedorInputLabel>
                         <Label htmlFor="mensaje">Fecha para servicio</Label>
                         <Input type="date" name="fecha" />
+                        <Error><ErrorMessage name="fecha"/></Error>
                     </ContenedorInputLabel>
                     <ContenedorInputLabel>
                         <Label htmlFor="entrega">Lugar de Entrega</Label>
                         <Input placeholder="Direccion, Ciudad, Partido" name="entrega" type="text" />
+                        <Error><ErrorMessage name="entrega"/></Error>
                         <LabelRetiro  display={OcultarField == true ? 'none' : 'inline'} htmlFor="retiro">Lugar de Retiro (Destino de busqueda)</LabelRetiro>
                         <FieldRetiro display={OcultarField == true ? 'none' : 'inline'} placeholder="Direccion, Ciudad, Partido" name="retiro" type="text" />
+                        <Error display={OcultarField == true ? 'none' : 'inline'}><ErrorMessage  name="retiro"/></Error>
                     </ContenedorInputLabel>
                     <ContenedorInputLabel>
                         <Label htmlFor="mensaje">Mensaje (*)</Label>
-                        <TextArea id="mensaje" placeholder="Mensaje complementario" as="textarea" name="mensaje" type="text" />      
-              </ContenedorInputLabel>
+                        <TextArea id="mensaje" placeholder="Mensaje complementario" as="textarea" name="mensaje" type="text" />
+            </ContenedorInputLabel>
                     <Boton type="submit" >Enviar</Boton>
+                    {mensajeEnviado === true ? <EnviadoMensaje>Mensaje Enviado ✓</EnviadoMensaje> : ''}
                 </Formulario>
             </Formik>
         </SeccionFormulario>
