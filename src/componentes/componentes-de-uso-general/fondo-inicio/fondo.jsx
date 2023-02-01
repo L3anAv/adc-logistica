@@ -27,6 +27,11 @@ const FondoDeSeccion = styled.div`
       rgba(78, 112, 239, 1) 100%
     );
   }
+
+  @media (max-width: 600px) {
+    height:200;
+  }
+
 `;
 
 export default FondoDeSeccion

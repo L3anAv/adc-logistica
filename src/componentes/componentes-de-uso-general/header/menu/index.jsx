@@ -12,10 +12,10 @@ const NavWeb = styled.nav`
   list-style-type: none;
   justify-content: space-between;
   animation: 0.7s MenuAparicion;
-  top: ${(props) => props.navWebTop || "0"};
-  width: ${(props) => props.navWebWidth || "auto"};
-  position: ${(props) => props.navWebPosition || "none"};
-  margin-top: ${(props) => props.navWebMarginTop || "5%"};
+  top: ${(props) => props.navWebTop};
+  width: ${(props) => props.navWebWidth};
+  position: ${(props) => props.navWebPosition};
+  margin-top: ${(props) => props.navWebMarginTop};
 
   @media (max-width: 945px) {
     top: 0;
@@ -27,7 +27,11 @@ const NavWeb = styled.nav`
     margin-left: 0;
     position: fixed;
     background-color: #4a6bd9;
-    transform: translate(${(props) => props.navToggle || "0"});
+    transform: translate(${(props) => props.navToggle});
+  }
+
+  @media (max-width: 500px) {
+    animation:none;
   }
 `;
 
@@ -67,8 +71,8 @@ const BotonItem = styled(Link)`
   font-size: 0.9rem;
   text-decoration: none;
   font-family: FontMenu;
-  font-weight: ${(props) => props.BotonWeight || ""};
-  color: ${(props) => props.BotonItemColor || "#fff"};
+  font-weight: ${(props) => props.botonweight || ""};
+  color: ${(props) => props.botonitemcolor || "#fff"};
 
   @media (max-width: 945px) {
     font-size: 1rem;
@@ -214,10 +218,10 @@ const Menu = () => {
       let alturaDeDocumento = document.body.scrollHeight
       let movimiento = alturaDeDocumento-1370
 
-      if(windowSize >= 900 && window.location.pathname == '/'){
+      if(window.location.pathname == '/'){
         window.scrollTo(0, movimiento)
       }
-      
+       
     })
   }
 
@@ -315,8 +319,8 @@ const Menu = () => {
                 id={item.id}
                 to={item.href}
                 onClick={item.id === 'contacto' ? IrhastaFormulario : moverAlTopAlHacerClick }
-                BotonWeight={menuFixed == true && menuColor == true && windowSizeRespon == false ? "600" : ""}
-                BotonItemColor={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "#fff"}
+                botonweight={menuFixed == true && menuColor == true && windowSizeRespon == false ? "600" : ""}
+                botonitemcolor={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "#fff"}
               >
                 {item.nombre}
               </BotonItem>

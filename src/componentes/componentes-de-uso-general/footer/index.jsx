@@ -1,6 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import React, {useState, useEffect} from "react";
 import { Svg } from "../../styled-components-general/svg";
 import { opcionesMenu } from "../../../../public/auxiliares/infoAux";
 
@@ -170,9 +170,38 @@ const PieDePagina = styled.div`
 
 function footer() {
 
+  const [windowSize, setWindowSize] = useState(0);
+  const [mapaResponsive, setmapaResponsive] = useState(false);
+
   function moverAlTopAlHacerClick(){
     window.scrollTo(0,0)
   }
+
+  function darWidthPantalla() {
+    window.addEventListener('resize', () => {
+      setWindowSize(window.innerWidth);
+    });
+  }
+  
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  }, [])
+
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  }, [windowSize])
+
+  useEffect(() => {
+    darWidthPantalla()
+    
+    if(windowSize <= 500){
+      setmapaResponsive(true)
+    }else{
+      setmapaResponsive(false)
+    }
+
+  }, [windowSize])
+  
 
   return (
     <>
@@ -191,8 +220,8 @@ function footer() {
           </Menu>
 
           <Iframe
-            width="300"
-            height="300"
+            width={mapaResponsive ? '250' : '300'}
+            height={mapaResponsive ? '250' : '300'}
             id="gmap_canvas"
             src="https://maps.google.com/maps?q=ADC%20uniendo%20emrpesas&t=&z=17&ie=UTF8&iwloc=&output=embed"
             frameborder="0"
@@ -232,4 +261,5 @@ function footer() {
   );
 }
 
-export default footer;
+
+export default footer

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 const SeccionFormulario = styled.div`
     display:grid;
@@ -30,9 +30,8 @@ const Img = styled.img`
         grid-column:1/3;
     }
 
-    @media (max-width: 500px) {
-        width:250px;
-        height:250px;
+    @media (max-width: 490px) {
+        display:none;
     }
     
 `
@@ -84,6 +83,14 @@ const Opciones = styled(Input)`
 const ContenedorInputLabel = styled.div`
    display:flex;
    flex-direction:column;
+`
+
+const Error = styled.p`
+    color:#cc0000;
+    margin-left:4%;
+    font-size:0.8rem;
+    font-family:FontMenu;
+    display:${props => props.display};
 `
 
 const Label = styled.label`
@@ -152,12 +159,34 @@ function formulario() {
     setcurrentDay(today)
     }
 
+    const postData = async(values)=>{
+        let res = await fetch("https://formsubmit.co/ajax/797a413ef96dbb6354aa48617a6043cd",{
+          method: "POST",
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+          body: JSON.stringify({ 
+            correo: values.correo,
+            fecha:  values.fecha,
+            retiro: values.retiro,
+            entrega: values.entrega,
+            telefono: values.telefono,
+            mensaje: values.mensaje,
+            opciones: values.opciones
+        })
+        })
+        let data = await res.json()
+        console.log(data)
+    }
+
     function hadleSubmit(values){
         let opciones = document.getElementById('opciones')
         let mensaje = document.getElementById('mensaje')
         values.opciones = opciones.value
         values.mensaje = mensaje.value
-        console.log(values)
+        postData(values)
+        //console.log(values)
     }
 
     function obtenerValorSelect(e){
@@ -189,7 +218,10 @@ function formulario() {
                     mensaje: '',
                     opciones: `${opcionValue}`
                 }}
-                onSubmit={hadleSubmit}
+                onSubmit={(values, {resetForm}) => {
+                    hadleSubmit(values)
+                    resetForm({ values: '' })
+                }}
             >
                 <Formulario>
                     <LabelInfo htmlFor="opcionales">(*) Opcionales</LabelInfo>

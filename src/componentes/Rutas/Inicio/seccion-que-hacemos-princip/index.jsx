@@ -139,8 +139,8 @@ const Boton = styled(Link)`
   background: #3d5bcc;
   font-family: FontMenu;
   text-align-last: center;
-  grid-row: ${props => props.botonRow};
-  grid-column: ${props => props.botonColum};
+  grid-row: ${props => props.botonrow};
+  grid-column: ${props => props.botoncolum};
 
     :hover {
     background: #294198;
@@ -168,6 +168,16 @@ const queHacemos = () => {
   function darDataOpcionClikeada(e){
     let valor = e.target.getAttribute('data-opcion-ficha')
     setindexData(valor)
+  }
+
+  function IrhastaFormulario(){
+
+      let alturaDeDocumento = document.body.scrollHeight
+      let movimiento = alturaDeDocumento-1370
+
+      if(window.location.pathname == '/'){
+        window.scrollTo(0, movimiento)
+      }
   }
 
   // -> Funcion que controla la altura del scroll
@@ -243,11 +253,11 @@ const queHacemos = () => {
               ))}
             </UlFicha>
 
-            <BotonServicio>Solicitar servicio &#62;&#62;</BotonServicio>
+            <BotonServicio onClick={IrhastaFormulario}>Solicitar servicio &#62;&#62;</BotonServicio>
           </FichaServicio>
           ))
         }
-         <Boton botonRow={windowSizeRespon == true ? '8/9': '5/6'} botonColum={windowSizeRespon == true ? '2/4': '2/4'} to="/servicios" onClick={moverAlTopAlHacerClick}>VER TODOS NUESTROS SERVICIOS</Boton>
+         <Boton botonrow={windowSizeRespon == true ? '8/9': '5/6'} botoncolum={windowSizeRespon == true ? '2/4': '2/4'} to="/servicios" onClick={moverAlTopAlHacerClick}>VER TODOS NUESTROS SERVICIOS</Boton>
       </ContenedorQueHacemos>
     </>
   );

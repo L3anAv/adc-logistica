@@ -27,12 +27,18 @@ const TituloPrincipal = styled.h2`
     margin-left:15%;
   }
 
+  @media (max-width: 500px) {
+    font-size:3rem;
+    margin-top:30%;
+    margin-left:22%;
+  }
+
 `
 
 const ContenidoDeQuienesSomos = styled.section`
   opacity:${props => props.opacidad};
   margin-top:${props => props.altoDeFondo}px;
-  animation: ${props => props.animacion || ''};
+  animation: ${props => props.animacion};
 `
 
 const TituloSeccion = styled(Titulo)`
@@ -111,6 +117,7 @@ const Boton = styled(Link)`
     }
 
     @media (max-width: 600px) {
+      width:50%;
       margin-top: 6%;
     }
 `
@@ -170,7 +177,7 @@ function quienesSomos() {
       <TituloPrincipal display={animacion == true ? 'none' : 'inline-block'}
       >¿QUIENES SOMOS?</TituloPrincipal>
       <ContenidoDeQuienesSomos altoDeFondo={altoDeFondo} 
-                               animacion={animacion == true ? '1s TextoAparicion linear' : ''}
+                               animacion={animacion == true ? '1.5s TextoAparicion linear' : ''}
                                opacidad={animacion == true ? '100%' : '0'}>
         <TituloSeccion>¿QUIENES SOMOS?</TituloSeccion>
         <InformacionCentral>

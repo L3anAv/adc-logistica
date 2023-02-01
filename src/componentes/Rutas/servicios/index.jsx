@@ -45,11 +45,19 @@ const ArticuloCentral = styled.article`
   margin-bottom: 100px;
   text-align: justify;
   flex-direction: column;
+  animation:1.5s TextoAparicion;
   font-family: SubTituloPrincipal;
 
   p {
+    font-size:1rem;
     margin-top: 18px;
     margin-bottom: 8px;
+  }
+
+  @media (max-width: 500px) {
+    p {
+      font-size:0.8rem;
+    }
   }
 `;
 
@@ -66,6 +74,10 @@ const TituloSeccion = styled(Titulo)`
 
 const TituloServicios = styled(TituloSeccion)`
   font-size: 1.4rem;
+
+  @media (max-width: 500px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const UlListado = styled.ul`
@@ -73,13 +85,21 @@ const UlListado = styled.ul`
   margin-bottom: 18px;
 
   p{
+    font-size:0.9rem;
     margin-bottom:30px;
+    text-aling:justify;
   }
+
 `;
 
 const LiListado = styled.li`
   margin-top:10px;
   margin-left: 30px;
+
+  @media (max-width: 500px) {
+    font-size:0.8rem;
+    text-aling:justify;
+  }
 `;
 
 function servicios() {
@@ -163,23 +183,23 @@ function servicios() {
           </p>
           <UlListado>
             <p>Alquieres/Servicio de:</p>
-            <LiListado> - Bobcat</LiListado>
-            <LiListado> - Desagotes </LiListado>
-            <LiListado> - Volquetes </LiListado>
-            <LiListado> - Hidrogruas </LiListado>
-            <LiListado> - Baños quimicos </LiListado>
-            <LiListado> - Tijeras / Elevacion de personas </LiListado>
+            <LiListado> - Bobcat.</LiListado>
+            <LiListado> - Desagotes. </LiListado>
+            <LiListado> - Volquetes. </LiListado>
+            <LiListado> - Hidrogruas. </LiListado>
+            <LiListado> - Baños quimicos. </LiListado>
+            <LiListado> - Tijeras / Elevacion de personas. </LiListado>
           </UlListado>
 
           <TituloServicios>Cobertura de Nuestros Servicios</TituloServicios>
 
           <UlListado>
             <p>Nuestra cobertura para los servicios son:</p>
-            <LiListado> - Capital Federal</LiListado>
-            <LiListado> - Interior del País </LiListado>
-            <LiListado> - Frecuencia semanal a Misiones</LiListado>
-            <LiListado> - Frecuencia diara a Aeropuerto Ezeiza </LiListado>
-            <LiListado> - Internacional (Somos transporte ATA)</LiListado>
+            <LiListado> - Capital Federal.</LiListado>
+            <LiListado> - Interior del País. </LiListado>
+            <LiListado> - Frecuencia semanal a Misiones.</LiListado>
+            <LiListado> - Frecuencia diara a Aeropuerto Ezeiza. </LiListado>
+            <LiListado> - Internacional (Somos transporte ATA).</LiListado>
           </UlListado>
         </ArticuloCentral>
       </InformacionCentral>
