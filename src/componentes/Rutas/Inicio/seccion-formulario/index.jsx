@@ -114,7 +114,7 @@ const EnviadoMensaje = styled(Label)`
     border-radius:6px;
     margin-bottom:12%;
     padding-left:175px;
-    background:${props => props.background}
+    background:${props => props.background};
     font-family:FontMenu;
 `
 
@@ -159,7 +159,7 @@ const Boton = styled.button`
 function formulario() {
 
     const [OcultarField,setocultarField] = useState(false)
-    const [mensajeEnviado, setmensajeEnviado] = useState(null)
+    const [mensajeEnviado, setmensajeEnviado] = useState(false)
     const [currentDay, setcurrentDay] = useState('00/00/0000')
 
     function obtenerDiaActual(){
@@ -321,7 +321,7 @@ function formulario() {
                         <TextArea id="mensaje" placeholder="Mensaje complementario" as="textarea" name="mensaje" type="text" />
             </ContenedorInputLabel>
                     <Boton type="submit" >Enviar</Boton>
-                    {mensajeEnviado === true ? <EnviadoMensaje background={`#449d44`} >Mensaje Enviado ✓</EnviadoMensaje> : <EnviadoMensaje background={`#f44336`}>Mensaje Fallido ✗</EnviadoMensaje>}
+                    {mensajeEnviado === true ? <EnviadoMensaje background={'#449d44'} >Mensaje Enviado ✓</EnviadoMensaje> : ''}
                 </Formulario>
             </Formik>
         </SeccionFormulario>

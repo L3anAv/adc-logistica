@@ -9,7 +9,7 @@ const ContenedorQueHacemos = styled.section`
   width: 100%;
   display: grid;
   overflow: hidden;
-  margin-bottom: 12%;
+  margin-bottom: 15%;
   background:#fdfdfd;
   justify-content: center;
   grid-template-columns: 15% 35% 35% 15%;

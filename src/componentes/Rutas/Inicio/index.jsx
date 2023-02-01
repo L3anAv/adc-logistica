@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Principal from "./principal-seccion/index";
+import Principal from "./principal-seccion/index"
+import SeccionMarcas from "./seccion-marcas/index"
 import Formulario from "./seccion-formulario/index"
-import QueHacemos from "./seccion-que-hacemos-princip/index";
+import QueHacemos from "./seccion-que-hacemos-princip/index"
 import Footer from "../../componentes-de-uso-general/footer/index"
 
 function index() {
@@ -30,6 +31,7 @@ function index() {
       <div onScroll={finalDePagina()} id="contenedorInicial">
       <Principal MenuOff={menuOff}/>
       <QueHacemos />
+      <SeccionMarcas />
       <Formulario />
       <Footer />
       </div>
