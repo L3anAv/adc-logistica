@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+import ImagenFormulario from "../../../images/logistica-camion-adc.jpeg"
 
 const SeccionFormulario = styled.div`
     display:grid;
@@ -258,7 +259,7 @@ function formulario() {
   return (
     <>
         <SeccionFormulario>
-            <Img src="public/images/logistica-camion-adc.jpeg"/>
+            <Img src={ImagenFormulario}/>
             <Formik
                 initialValues={{
                     correo: '',

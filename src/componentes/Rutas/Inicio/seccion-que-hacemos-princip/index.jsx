@@ -152,6 +152,8 @@ const Boton = styled(Link)`
 
     @media (max-width: 600px) {
       margin-top: 6%;
+      margin-left:10px;
+      margin-right:10px;
     }
 `
 
@@ -175,7 +177,7 @@ const queHacemos = () => {
       let alturaDeDocumento = document.body.scrollHeight
       let movimiento = alturaDeDocumento-1370
 
-      if(window.location.pathname == '/'){
+      if(window.location.pathname == '/demo-adc/' || window.location.pathname == '/'){
         window.scrollTo(0, movimiento)
       }
   }

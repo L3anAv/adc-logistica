@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
+import Techo from "../../../images/techo.png"
+import Kernium from "../../../images/kernium.png"
 
 const ContenedorImagenes = styled.div`
   display:flex;
@@ -19,25 +21,24 @@ const CotenedorTitulo = styled.div`
 `
 
 const TituloPrincipal = styled.h2`
-  z-index:1;
-  font-size:3rem;
+  z-index:-1;
+  font-size:4rem;
   jusitfy-self:center;
   font-family:TituloPrincipal;
   animation:1s Aparicion linear;
 
-  @media (max-width: 600px) {
-    font-size:5rem;
-    margin-left:15%;
+  @media (max-width: 800px) {
+    font-size:3rem;
   }
 
   @media (max-width: 500px) {
-    font-size:3rem;
-    margin-left:22%;
+    font-size:2rem;
   }
 
 `
 
 const Img = styled.img`
+  z-index:-1;
   width:450px;
   cursor:pointer;
   transform:scale(0.4);
@@ -47,6 +48,11 @@ const Img = styled.img`
   :hover{
     filter: grayscale(0);
   }
+
+  @media (max-width: 500px) {
+    margin-left:-25px;
+  }
+
 `
 
 function seccionMarcas() {
@@ -58,7 +64,6 @@ function seccionMarcas() {
     function darPosicionDeScroll() {
       window.addEventListener("scroll", () => {
       setscrollPosicion(window.scrollY);
-      console.log(window.scrollY)
       });
   }
 
@@ -78,8 +83,8 @@ function seccionMarcas() {
       <TituloPrincipal>QUIENES NOS ELIGEN</TituloPrincipal>
       </CotenedorTitulo>
         <ContenedorImagenes>
-          <Img src="public/images/kernium.png" />
-          <Img src="public/images/techo.png" />
+          <Img src={Kernium} />
+          <Img src={Techo} />
         </ContenedorImagenes>
     </>
   )

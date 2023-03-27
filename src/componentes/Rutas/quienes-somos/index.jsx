@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Link } from "react-router-dom"
 import { useState,useEffect } from 'react'
+import ImagenSeccion from "../../images/deposito-carga.jpeg"
 import Header from '../../componentes-de-uso-general/header/index'
 import Footer from '../../componentes-de-uso-general/footer/index'
 import { Titulo } from '../../styled-components-general/titulo-central'
@@ -172,7 +173,7 @@ function quienesSomos() {
   return (
     <>
     <Contenedor onScroll={finalDePagina()} id="contenedorInicial">
-      <FondoSeccion urlFondo={'"public/images/deposito-carga.jpeg"'} height={animacion == false ? '500px' : '300px'}/>
+      <FondoSeccion urlFondo={`${ImagenSeccion}`} height={animacion == false ? '500px' : '300px'}/>
       <Header MenuOff={menuOff}/>
       <TituloPrincipal display={animacion == true ? 'none' : 'inline-block'}
       >¿QUIENES SOMOS?</TituloPrincipal>
@@ -181,7 +182,7 @@ function quienesSomos() {
                                opacidad={animacion == true ? '100%' : '0'}>
         <TituloSeccion>¿QUIENES SOMOS?</TituloSeccion>
         <InformacionCentral>
-        <Img src='/public/images/deposito-carga.jpeg' altoDeFondo={300}/>
+        <Img src={ImagenSeccion} altoDeFondo={300}/>
         <ArticuloCentral>
             <p>Somos una empresa joven de transporte enfocada en brindar a nuestros clientes la mejor relación costo-beneficio en el área de transporte de cargas. Para ello, ponemos a su disposición servicios de inigualable calidad, que les permitirá obtener notables ventajas competitivas.</p>
             <p>Los años de experiencia constituyen el mejor respaldo de nuestra excelente capacidad de respuesta y nuestros inmejorables tiempos. Nuestra Tecnología y calidad están certificadas bajo normas ISO 9001. <br />Además, contamos con permisos provinciales, nacionales e internacionales que nos habilitan para circular y trasladar distintos tipos de mercadería/otros.Nuestra permanencia y vigencia en el mercado se explican por el valioso grupo humano que conforma la empresa: nuestros profesionales se desempeñan con acierto y celeridad en cada circunstancia, dando cuenta de una eximia capacidad de resolución.</p>

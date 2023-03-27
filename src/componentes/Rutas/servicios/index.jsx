@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { useState,useEffect } from 'react'
-import Header from "../../componentes-de-uso-general/header/index";
-import Footer from "../../componentes-de-uso-general/footer/index";
-import { Titulo } from "../../styled-components-general/titulo-central";
-import FondoSeccion from "../../componentes-de-uso-general/fondo-inicio/fondo";
+import TransporteCarga from "../../images/transporte-de-cargas.jpeg"
+import CargaTransporte from "../../images/carga-transporte-2.jpeg"
+import Header from "../../componentes-de-uso-general/header/index"
+import Footer from "../../componentes-de-uso-general/footer/index"
+import { Titulo } from "../../styled-components-general/titulo-central"
+import FondoSeccion from "../../componentes-de-uso-general/fondo-inicio/fondo"
 
 const InformacionCentral = styled.div`
   display: flex;
@@ -108,6 +110,7 @@ function servicios() {
   const [marginTop, setmarginTop] = useState(300)
   const [scrollPosicion, setscrollPosicion] = useState(0);
 
+  const rutaDeImagen = 'src/componentes/images/carga-transporte-2.jpeg'
   
     // -> Funcion que controla la altura del scrol
     function darPosicionDeScroll() {
@@ -134,12 +137,12 @@ function servicios() {
     <>
       <div id="contenedorInicial">
       <FondoSeccion
-        urlFondo={'"public/images/carga-transporte-2.jpeg"'}
+        urlFondo={`${CargaTransporte}`}
         height={"200px"}
       />
       <Header MenuOff={menuOff} />
       <InformacionCentral marginTop={marginTop}>
-      <Img src="public/images/carga-transporte-2.jpeg" marginTop={'-10'}/>
+      <Img src={CargaTransporte} marginTop={'-10'}/>
         <ArticuloCentral>
           <TituloSeccion>Nuestros servicios</TituloSeccion>
 
@@ -159,7 +162,7 @@ function servicios() {
           
           <TituloServicios>Tranporte</TituloServicios>
 
-          <Img src="public/images/transporte-de-cargas.jpeg" marginTop={'40'}/>
+          <Img src={TransporteCarga} marginTop={'40'}/>
 
           <p>
             Realizamos transporte en general con una flota de camiones,

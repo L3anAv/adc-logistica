@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import React, {useState, useEffect} from "react";
 import { Svg } from "../../styled-components-general/svg";
+import LogoEmpresa from "../../images/logo-sin-fondo-footer.png"
 import { opcionesMenu } from "../../../../public/auxiliares/infoAux";
 
 const Footer = styled.footer`
@@ -207,7 +208,7 @@ function footer() {
     <>
       <Footer>
         <ContenedorPrincipalFooter>
-          <Img src="public/images/logo-sin-fondo-footer.png"></Img>
+          <Img src={LogoEmpresa}></Img>
 
           <Menu>
             <UlMenu>
