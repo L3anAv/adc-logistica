@@ -14,10 +14,10 @@ function index() {
     window.addEventListener('scroll', () =>{
 
       let alturaDeDocumento = document.body.scrollHeight
-      let scrollRecorrido = window.pageYOffset
+      let scrollRecorrido = window.scrollY
       let viewport = window.innerHeight
 
-      if(scrollRecorrido + viewport >= (alturaDeDocumento - 200)){
+      if(scrollRecorrido + viewport >= (alturaDeDocumento - 700)){
         setMenuOff(true)
       }else{
         setMenuOff(false)
