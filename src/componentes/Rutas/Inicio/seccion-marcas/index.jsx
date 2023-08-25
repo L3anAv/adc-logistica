@@ -12,9 +12,10 @@ const ContenedorImagenes = styled.div`
   margin-bottom: 10%;
   justify-content:space-around;
 
-  @media (max-width: 500px) {
+  @media (max-width: 1100px) {
+    align-items: center;
     flex-direction:column;
-}
+  }
 
 `
 
@@ -44,7 +45,7 @@ const TituloPrincipal = styled.h2`
 
 const Img = styled.img`
   z-index:-1;
-  width:380px;
+  width:350px;
   cursor:pointer;
   transform:scale(0.4);
   filter: grayscale(100%);
@@ -52,6 +53,10 @@ const Img = styled.img`
 
   :hover{
     filter: grayscale(0);
+  }
+
+  @media (max-width: 1000px) {
+    transform:scale(0.5);
   }
 
   @media (max-width: 500px) {
