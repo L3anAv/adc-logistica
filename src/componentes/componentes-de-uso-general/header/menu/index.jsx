@@ -182,8 +182,6 @@ const OpenMenu = styled(Svg)`
 
 const Menu = () => {
 
-  const agregarOnClick = true
-
   // --> Estado
   const [menuCoA, setmenuCoA] = useState(true);
   const [windowSize, setWindowSize] = useState(0);
@@ -218,7 +216,7 @@ const Menu = () => {
       let alturaDeDocumento = document.body.scrollHeight
       let movimiento = alturaDeDocumento-1370
 
-      if(window.location.pathname == '/demo-adc/' || window.location.pathname == '/demo-adc' || window.location.pathname == '/'){
+      if(window.location.pathname == '/adc-logistica/' || window.location.pathname == '/adc-logistica' || window.location.pathname == '/'){
         window.scrollTo(0, movimiento)
       }else{
         moverAlTopAlHacerClick()

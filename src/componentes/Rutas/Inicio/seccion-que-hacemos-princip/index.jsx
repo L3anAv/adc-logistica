@@ -9,7 +9,7 @@ const ContenedorQueHacemos = styled.section`
   width: 100%;
   display: grid;
   overflow: hidden;
-  margin-bottom: 15%;
+  margin-bottom: 8%;
   background:#fdfdfd;
   justify-content: center;
   grid-template-columns: 15% 35% 35% 15%;
@@ -176,8 +176,9 @@ const queHacemos = () => {
 
       let alturaDeDocumento = document.body.scrollHeight
       let movimiento = alturaDeDocumento-1370
-
-      if(window.location.pathname == '/demo-adc/' || window.location.pathname == '/'){
+      
+      if(window.location.pathname == '/adc-logistica/' || window.location.pathname == '/' || window.location.pathname == '/adc-logistica'){
+        
         window.scrollTo(0, movimiento)
       }
   }

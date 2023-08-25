@@ -254,7 +254,7 @@ function footer() {
           <p>2022 | ADC ARGENTINA UNIENDO EMPRESAS S.A</p>
           <p>
             Desarollado por{" "}
-            <a href="https://github.com/l3anav">!L3andro Avila</a>
+            <a href="https://www.linkedin.com/in/l3anav/">Leandro Avila</a>
           </p>
         </PieDePagina>
       </Footer>

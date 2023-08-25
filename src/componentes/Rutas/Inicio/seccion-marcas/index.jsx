@@ -1,16 +1,21 @@
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import Techo from "../../../images/techo.png"
+import Toyota from "../../../images/toyota.png"
+import Horizon from "../../../images/horizon.png"
 import Kernium from "../../../images/kernium.png"
 
 const ContenedorImagenes = styled.div`
   display:flex;
   overflow:hidden;
+  margin-top: 2%;
   margin-bottom: 10%;
-  justify-content:center;
+  justify-content:space-around;
+
   @media (max-width: 500px) {
     flex-direction:column;
 }
+
 `
 
 const CotenedorTitulo = styled.div`
@@ -39,7 +44,7 @@ const TituloPrincipal = styled.h2`
 
 const Img = styled.img`
   z-index:-1;
-  width:450px;
+  width:380px;
   cursor:pointer;
   transform:scale(0.4);
   filter: grayscale(100%);
@@ -85,6 +90,8 @@ function seccionMarcas() {
         <ContenedorImagenes>
           <Img src={Kernium} />
           <Img src={Techo} />
+          <Img src={Toyota} />
+          <Img src={Horizon} />
         </ContenedorImagenes>
     </>
   )

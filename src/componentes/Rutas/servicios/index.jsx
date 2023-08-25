@@ -147,11 +147,7 @@ function servicios() {
           <TituloSeccion>Nuestros servicios</TituloSeccion>
 
           <TituloServicios>Almacenamieno/Depósito</TituloServicios>
-          <p>
-            Almacená en nuestros depósitos contamos con almacenamiento en
-            distintas localidades de la Provincia de Buenos Aires ubicados en
-            Escobar, Pacheco, Parque Industrial , Pilar y San Pedro.
-          </p>
+          <p>Almacená en nuestros depósitos contamos con almacenamiento en distintas localidades de la Provincia de Buenos Aires ubicados en Escobar, Pacheco, Parque Industrial, Pilar y San Pedro.</p>
           <UlListado>
             <p>Nos encargamos de:</p>
             <LiListado> - In/Out.</LiListado>
@@ -177,11 +173,11 @@ function servicios() {
           </UlListado>
 
           <TituloServicios>
-            Servicios para construccion y Alquileres
+            Servicios de Alquileres para la Construcción
           </TituloServicios>
 
           <p>
-            Contamos con maquinaria disponible para alquilar entre otras
+            Contamos con maquinaria disponible para alquilar, entre otras
             utilidades.
           </p>
           <UlListado>
@@ -194,10 +190,8 @@ function servicios() {
             <LiListado> - Tijeras / Elevacion de personas. </LiListado>
           </UlListado>
 
-          <TituloServicios>Cobertura de Nuestros Servicios</TituloServicios>
-
           <UlListado>
-            <p>Nuestra cobertura para los servicios son:</p>
+            <p><b>Nuestra cobertura para los servicios son:</b></p>
             <LiListado> - Capital Federal.</LiListado>
             <LiListado> - Interior del País. </LiListado>
             <LiListado> - Frecuencia semanal a Misiones.</LiListado>
