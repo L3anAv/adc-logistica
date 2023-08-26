@@ -188,8 +188,8 @@ const Menu = () => {
   const [menuColor, setmenuColor] = useState(false);
   const [menuFixed, setmenuFixed] = useState(false);
   const [scrollPosicion, setscrollPosicion] = useState(0);
+  const [scrollExecuted, setScrollExecuted] = useState(false);
   const [windowSizeRespon, setWindowSizeRespon] = useState(false);
-
   function moverAlTopAlHacerClick(){
     window.scrollTo(0,0)
   }
@@ -204,12 +204,33 @@ const Menu = () => {
   // -> Encargado de dar el width del inicio cuando carga la página
   useEffect(() => {
     setWindowSize(window.innerWidth);
-    IrhastaFormulario()
+    /* IrhastaFormulario() */
   }, [])
 
+  useEffect(() => {
+    if (window.location.hash === '#formulario' && !scrollExecuted) {
+      IrhastaFormulario();
+      setScrollExecuted(true);
+    }
+  }, [scrollExecuted]);
 
   function IrhastaFormulario(){
-    let elementContacto = document.getElementById('contacto')
+
+      const inicioSection = document.getElementById('formulario');
+      
+      if (inicioSection) {
+        const formulario = inicioSection.querySelector('form');
+    
+        if (formulario) {
+          const offsetTop = formulario.offsetTop;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+
+    /*let elementContacto = document.getElementById('contacto')
     
     elementContacto.addEventListener('click', () => {
 
@@ -222,7 +243,7 @@ const Menu = () => {
         moverAlTopAlHacerClick()
       }
        
-    })
+    })*/
   }
 
   // -> Funcion que controla la altura del scrol

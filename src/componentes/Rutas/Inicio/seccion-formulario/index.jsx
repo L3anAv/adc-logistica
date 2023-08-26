@@ -258,7 +258,7 @@ function formulario() {
 
   return (
     <>
-        <SeccionFormulario>
+        <SeccionFormulario id="formulario">
             <Img src={ImagenFormulario}/>
             <Formik
                 initialValues={{
