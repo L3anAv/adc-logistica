@@ -84,6 +84,7 @@ const BotonItem = styled(Link)`
 `;
 
 const SvgContainer = styled.div`
+  visibility:hidden;
   margin-right: 3%;
 
   @media (max-width: 945px) {
@@ -204,7 +205,6 @@ const Menu = () => {
   // -> Encargado de dar el width del inicio cuando carga la página
   useEffect(() => {
     setWindowSize(window.innerWidth);
-    /* IrhastaFormulario() */
   }, [])
 
   useEffect(() => {
@@ -227,23 +227,11 @@ const Menu = () => {
             top: offsetTop,
             behavior: 'smooth'
           });
+
+          window.history.replaceState({}, document.title, window.location.pathname);
+
         }
       }
-
-    /*let elementContacto = document.getElementById('contacto')
-    
-    elementContacto.addEventListener('click', () => {
-
-      let alturaDeDocumento = document.body.scrollHeight
-      let movimiento = alturaDeDocumento-1370
-
-      if(window.location.pathname == '/adc-logistica/' || window.location.pathname == '/adc-logistica' || window.location.pathname == '/'){
-        window.scrollTo(0, movimiento)
-      }else{
-        moverAlTopAlHacerClick()
-      }
-       
-    })*/
   }
 
   // -> Funcion que controla la altura del scrol

@@ -17,7 +17,7 @@ const SeccionPrincipal = styled.section`
 `;
 
 const TituloCentral = styled.h2`
-  width: 75%;
+  width: 72%;
   z-index: 1;
   color: #fff;
   opacity: 88%;
@@ -29,7 +29,7 @@ const TituloCentral = styled.h2`
   margin-bottom: 0;
   padding-top: 20px;
   padding-left: 20px;
-  font-size: 3.75rem;
+  font-size: 3.70rem;
   text-aling: justify;
   font-family: TituloPrincipal;
   animation: 1.5s TituloAnimacion;
@@ -123,7 +123,7 @@ const contenidoCentral = () => {
     <>
       <SeccionPrincipal>
         <TituloCentral>
-          SERVICIOS LOGISTICOS & ALQUILER DE MAQUINARIAS
+          SERVICIOS LOGISTICOS INTEGRALES & ALQUILER DE MAQUINARIAS
         </TituloCentral>
         <Subtitulo>Prestamos servicio a empresas y particulares.</Subtitulo>
         <BotonNuestrosServicios >
