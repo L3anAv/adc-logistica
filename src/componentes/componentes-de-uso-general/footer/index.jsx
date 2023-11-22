@@ -91,6 +91,7 @@ const Iframe = styled.iframe`
 
 const RedesSociales = styled.div`
   display: flex;
+  visibility:hidden;
   grid-row: 1/2;
   grid-column: 4/5;
   aling-content: start;
