@@ -49,7 +49,8 @@ const TituloSeccion = styled(Titulo)`
   font-size:2rem;
   margin-left:10%;
   jusitfy-self:center;
-
+  text-align: center;
+  
   ::selection {
     color: #fff;
   }
@@ -92,6 +93,7 @@ const ArticuloCentral = styled.article`
     font-family:SubTituloPrincipal;
 
     p {
+        font-size:16px;
         margin-top:18px;
     }
 `
@@ -184,9 +186,14 @@ function quienesSomos() {
         <InformacionCentral>
         <Img src={ImagenSeccion} altoDeFondo={300}/>
         <ArticuloCentral>
-            <p>Somos una empresa joven de transporte enfocada en brindar a nuestros clientes la mejor relación costo-beneficio en el área de transporte de cargas. Para ello, ponemos a su disposición servicios de inigualable calidad, que les permitirá obtener notables ventajas competitivas.</p>
-            <p> Los años de experiencia constituyen el mejor respaldo de nuestra excelente capacidad de respuesta y nuestros inmejorables tiempos. Nuestra Tecnología y calidad están certificadas bajo normas ISO 9001. Además, contamos con permisos provinciales, nacionales e internacionales que nos habilitan para circular y trasladar distintos tipos de mercadería/otros. Nuestra permanencia y vigencia en el mercado se explican por el valioso grupo humano que conforma la empresa: nuestros profesionales se desempeñan con acierto y celeridad en cada circunstancia, dando cuenta de una eximia capacidad de resolución. </p>
-            <p>Como empresa líder en el rubro, nuestra meta principal es lograr la completa satisfacción de nuestros clientes, para cumplirla, trabajamos atentos a sus necesidades con honestidad, sensatez y sobre todo eficiencia.</p>
+        <p>ADC Argentina Uniendo Empresas presta Servicios Logísticos Integrales para empresas y particulares.</p>
+
+        <p>Hacemos acarreos de maquinaria, fletes, repartos, mudanzas, almacenamiento y hemos incorporado servicios complementarios como la colocación de volquetes, desagotes, hidrogruas, alquiler de autoelevadores, retroexcavadoras y otros.</p>
+
+        <p>Nuestro equipo de profesionales da soporte y brinda soluciones a todos aquellos que nos eligen para trabajar y resolver todo tipo de requerimiento.</p>
+        <p>Nos eligen empresas como Toyota, Horizon, Techo, Peri, Piko Home, entre otras.</p>
+
+        <p>¡Estamos a la espera de su requerimiento!</p>
             <Boton to="/servicios" onClick={moverAlTopAlHacerClick}>NUESTROS SERVICIOS</Boton>
         </ArticuloCentral>
         </InformacionCentral>
