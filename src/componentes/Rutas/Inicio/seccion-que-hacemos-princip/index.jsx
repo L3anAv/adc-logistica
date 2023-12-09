@@ -55,17 +55,29 @@ const UlMenuServ = styled.ul`
 `;
 
 const LiMenuServ = styled.li`
-  color: #1b3281;
+  color: #000;
   cursor: pointer;
   border-radius:15px;
   margin:4px 8px 4px 8px;
-  border:1px solid #3d5bcc;
+  border:1px solid #000;
   padding:2px 12px 2px 12px;
 
   :hover {
     color:#fff;
-    background:#3d5bcc;
-    border-bottom: 1px solid #3d5bcc;
+    background:#0F8DF5;
+    border: 1px solid #0F8DF5;
+  }
+
+  @media (max-width: 700px) {
+    color:#fff;
+    background:#0F8DF5;
+    border: 1px solid transparent;
+
+    :hover {
+      color:#fff;
+      background:#0F8DF5;
+      border: 1px solid none;
+    }
   }
 
 `;
@@ -127,7 +139,7 @@ const BotonServicio = styled.button`
   cursor: pointer;
   font-size: 15px;
   grid-area: boton;
-  background: #294198;
+  background: #3d5bcc;
   border-radius:8px;
   justify-self: end;
   text-align: center;
@@ -150,14 +162,14 @@ const Boton = styled(Link)`
   font-size:0.8rem;
   line-height: 40px;
   border-radius: 5px;
-  background: #3d5bcc;
+  background: #220FF5;
   font-family: FontMenu;
   text-align-last: center;
   grid-row: ${props => props.botonrow};
   grid-column: ${props => props.botoncolum};
 
     :hover {
-    background: #294198;
+    background:#223BF5;
     }
 
     @media (max-width: 1270px) {
@@ -261,7 +273,7 @@ const queHacemos = () => {
           <FichaServicio fichaColum={windowSizeRespon == true ? `${info.ColumnResponsive}` : `${info.Colum}`}
                          fichaRow={windowSizeRespon == true ? `${info.RowResponsive}` : `${info.Row}`}
                          key={index} >
-            
+
             {svgManager(info.Svg)}
 
             <UlFicha>

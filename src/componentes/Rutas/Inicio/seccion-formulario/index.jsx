@@ -141,11 +141,12 @@ const Boton = styled.button`
     font-size:0.8rem;
     margin-bottom:4%;
     border-radius: 5px;
-    background: #3d5bcc;
+    background: #220FF5;
     font-family: FontMenu;
     text-align-last: center;
+    
     :hover {
-    background: #294198;
+    background: #223BF5;
     }
 
     @media (max-width: 1270px) {

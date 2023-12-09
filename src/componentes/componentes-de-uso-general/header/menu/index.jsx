@@ -10,8 +10,8 @@ const NavWeb = styled.nav`
   display: flex;
   opacity: 100%;
   list-style-type: none;
-  justify-content: space-between;
   animation: 0.7s MenuAparicion;
+  justify-content: space-between;
   top: ${(props) => props.navWebTop};
   width: ${(props) => props.navWebWidth};
   position: ${(props) => props.navWebPosition};
@@ -36,6 +36,7 @@ const NavWeb = styled.nav`
 `;
 
 const UlMenu = styled.ul`
+
   display: flex;
   margin-left: 2.5%;
 
@@ -51,13 +52,12 @@ const UlMenu = styled.ul`
 const ItemMenu = styled.li`
   color: #fff;
   user-select: none;  
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-bottom: 12px;
   text-decoration: none;
+  margin:0px 8px 0px 8px;
+  padding:0px 12px 12px 12px;
 
   :hover {
-    border-bottom: ${(props) => props.ItemMenuBorder || "2px solid white"};
+    border-bottom: ${(props) => props.ItemMenuBorder || "1px solid white"};
   }
 
   @media (max-width: 945px) {
@@ -68,11 +68,12 @@ const ItemMenu = styled.li`
 `;
 
 const BotonItem = styled(Link)`
+  margin-top:5px;
   font-size: 0.9rem;
-  text-decoration: none;
   font-family: FontMenu;
+  text-decoration: none;
+  color: ${(props) => props.botonitemcolor};
   font-weight: ${(props) => props.botonweight || ""};
-  color: ${(props) => props.botonitemcolor || "#fff"};
 
   @media (max-width: 945px) {
     font-size: 1rem;
@@ -104,7 +105,7 @@ const Svg = styled.svg`
   width: 25px;
   opacity: 40%;
   padding: 3px;
-  height: 25px;
+  height: 35px;
   cursor: pointer;
   margin-left: 8px;
   margin-right: 8px;
@@ -124,8 +125,8 @@ const Svg = styled.svg`
 
 const RedSocial = styled(Svg)`
   @media (max-width: 815px) {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     margin-left: 2px;
     margin-right: 2px;
   }
@@ -327,7 +328,7 @@ const Menu = () => {
             <ItemMenu
               ItemMenuBorder={
                 menuFixed == true && menuColor == true && windowSizeRespon == false
-                  ? "2px solid #4a6bd9"
+                  ? "2px solid #000"
                   : "2px solid white"
               }
               key={item.nombre}
@@ -337,7 +338,7 @@ const Menu = () => {
                 to={item.href}
                 onClick={item.id === 'contacto' ? IrhastaFormulario : moverAlTopAlHacerClick }
                 botonweight={menuFixed == true && menuColor == true && windowSizeRespon == false ? "600" : ""}
-                botonitemcolor={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "#fff"}
+                botonitemcolor={menuFixed && menuColor && !windowSizeRespon ? "#000" : "#fff"}
               >
                 {item.nombre}
               </BotonItem>
@@ -349,7 +350,7 @@ const Menu = () => {
           {/* Instragram */}
           <a href="https://www.instagram.com/adc_servicios_y_logistica/" target="_blank" rel="noopener noreferrer">
           <RedSocial
-            SvgFill={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#4a6bd9" : "white"}
+            SvgFill={menuFixed == true && menuColor == true && windowSizeRespon == false ? "#000" : "white"}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
           >

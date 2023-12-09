@@ -7,7 +7,8 @@ export const Svg = styled.svg`
   cursor:pointer;
   grid-area:icono;
   transition: all 0.5s;
-  
+  z-index:0;
+
   :hover{
   opacity:120%;
   }
