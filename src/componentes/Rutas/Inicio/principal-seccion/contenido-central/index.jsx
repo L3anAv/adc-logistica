@@ -123,7 +123,7 @@ const contenidoCentral = () => {
     <>
       <SeccionPrincipal>
         <TituloCentral>
-          SERVICIOS LOGISTICOS INTEGRALES & ALQUILER DE MAQUINARIAS
+          SERVICIOS LOGÍSTICOS INTEGRALES & ALQUILER DE MAQUINARIAS
         </TituloCentral>
         <Subtitulo>Prestamos servicio a empresas y particulares.</Subtitulo>
         <BotonNuestrosServicios >

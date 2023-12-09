@@ -28,7 +28,7 @@ const CotenedorTitulo = styled.div`
 
 const TituloPrincipal = styled.h2`
   z-index:-1;
-  font-size:4rem;
+  font-size:3rem;
   jusitfy-self:center;
   font-family:TituloPrincipal;
   animation:1s Aparicion linear;
@@ -90,7 +90,7 @@ function seccionMarcas() {
   return (
     <>
        <CotenedorTitulo>
-      <TituloPrincipal>QUIENES NOS ELIGEN</TituloPrincipal>
+      <TituloPrincipal>¿QUIÉNES NOS ELIGEN?</TituloPrincipal>
       </CotenedorTitulo>
         <ContenedorImagenes>
           <Img src={Kernium} />

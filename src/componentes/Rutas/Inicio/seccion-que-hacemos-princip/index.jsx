@@ -9,7 +9,7 @@ const ContenedorQueHacemos = styled.section`
   width: 100%;
   display: grid;
   overflow: hidden;
-  margin-bottom: 8%;
+  margin-bottom: 6%;
   background:#fdfdfd;
   justify-content: center;
   grid-template-columns: 15% 35% 35% 15%;
@@ -24,6 +24,7 @@ const ContenedorQueHacemos = styled.section`
 
 const TituloSeccion = styled(Titulo)`
   grid-row: 1/2;
+  font-size:3rem;
   margin-top: 11%;
   grid-column: 2/4;
   aling-self: center;
@@ -56,12 +57,17 @@ const UlMenuServ = styled.ul`
 const LiMenuServ = styled.li`
   color: #1b3281;
   cursor: pointer;
-  margin-left: 8px;
-  margin-right: 8px;
+  border-radius:15px;
+  margin:4px 8px 4px 8px;
+  border:1px solid #3d5bcc;
+  padding:2px 12px 2px 12px;
 
   :hover {
-    border-bottom: 4px solid #3d5bcc;
+    color:#fff;
+    background:#3d5bcc;
+    border-bottom: 1px solid #3d5bcc;
   }
+
 `;
 
 const FichaServicio = styled.div`
@@ -88,22 +94,20 @@ const FichaServicio = styled.div`
       "boton boton boton";
   }
 
-  :hover {
-    transform: scale(1.05);
-  }
 `;
 
 const UlFicha = styled.ul`
   width: 80%;
-  grid-area: lista;
   margin-top: 5px;
+  grid-area: lista;
 `;
 
 const LiFicha = styled.li`
   padding: 8px;
-  margin-left: 8%;
-  text-align: start;
+  font-weight500;
+  margin-left: 22%;
   font-family: FontMenu;
+  list-style-type: circle;
 
   @media (max-width: 640px) {
     font-size: 0.8rem;
@@ -116,14 +120,24 @@ const LiFicha = styled.li`
 `;
 
 const BotonServicio = styled.button`
-  color: #000;
+  color: #fff;
+  height: 40px;
   padding: 6px;
-  font-size: 15px;
+  width: 180px;
   cursor: pointer;
+  font-size: 15px;
   grid-area: boton;
-  background: none;
-  border-radius: 5px;
+  background: #294198;
+  border-radius:8px;
+  justify-self: end;
+  text-align: center;
   font-family: FontMenu;
+
+  @media (max-width: 640px) {
+    font-size: 0.8rem;
+    height: 30px;
+    width: 150px;
+  }
 `;
 
 const Boton = styled(Link)`
@@ -238,7 +252,7 @@ const queHacemos = () => {
           <UlMenuServ>
             <LiMenuServ data-opcion-ficha="0" onClick={darDataOpcionClikeada}>Servicios</LiMenuServ>
             <LiMenuServ data-opcion-ficha="1" onClick={darDataOpcionClikeada}>Alquieres</LiMenuServ>
-            <LiMenuServ data-opcion-ficha="2" onClick={darDataOpcionClikeada}>Almacenamiento/Deposito</LiMenuServ>
+            <LiMenuServ data-opcion-ficha="2" onClick={darDataOpcionClikeada}>Almacenamiento/Depósito</LiMenuServ>
           </UlMenuServ>
         </MenuServicios>
 
@@ -255,8 +269,8 @@ const queHacemos = () => {
                 <LiFicha key={infor + index}>{infor}</LiFicha>
               ))}
             </UlFicha>
-
-            <BotonServicio onClick={IrhastaFormulario}>Solicitar servicio &#62;&#62;</BotonServicio>
+            
+            <BotonServicio onClick={IrhastaFormulario}>Solicitar servicio</BotonServicio>
           </FichaServicio>
           ))
         }
