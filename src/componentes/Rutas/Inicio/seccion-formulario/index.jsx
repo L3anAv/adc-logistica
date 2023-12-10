@@ -283,7 +283,7 @@ function formulario() {
                         <Label htmlFor="correo">Correo (*)</Label>
                         <Input placeholder="correo@email.com" name="correo" type="text" />
                         <Error><ErrorMessage name="correo"/></Error>
-                        <Label htmlFor="Telefono">Numero de teléfono (Whatsapp)</Label>
+                        <Label htmlFor="Telefono">Número de teléfono (Whatsapp)</Label>
                         <Input placeholder="11-xxxx-xxxx" name="telefono" type="text" />
                         <Error><ErrorMessage name="telefono"/></Error>
                     </ContenedorInputLabel>
@@ -300,7 +300,7 @@ function formulario() {
                             <option value="Bobcat">Bobcat</option>
                             <option value="Baños químicos">Baños químicos</option>
                             <option value="Autoelevadores">Autoelevadores</option>
-                            <option value="Gruas Hidraulicas">Gruas Hidraulicas</option>
+                            <option value="Gruas Hidraulicas">Gruas Hidráulicas</option>
                             <option value="Almacenamiento">Almacenamiento en depósito</option>
                             <option value="Otro">Otros motivos de contacto</option>
                         </Opciones>
@@ -312,10 +312,10 @@ function formulario() {
                     </ContenedorInputLabel>
                     <ContenedorInputLabel>
                         <Label htmlFor="entrega">Lugar de Entrega</Label>
-                        <Input placeholder="Direccion, Ciudad, Partido" name="entrega" type="text" />
+                        <Input placeholder="Dirección, Ciudad, Partido" name="entrega" type="text" />
                         <Error><ErrorMessage name="entrega"/></Error>
-                        <LabelRetiro  display={OcultarField == true ? 'none' : 'inline'} htmlFor="retiro">Lugar de Retiro (Destino de busqueda)</LabelRetiro>
-                        <FieldRetiro display={OcultarField == true ? 'none' : 'inline'} placeholder="Direccion, Ciudad, Partido" name="retiro" type="text" />
+                        <LabelRetiro  display={OcultarField == true ? 'none' : 'inline'} htmlFor="retiro">Lugar de Retiro (Destino de búsqueda)</LabelRetiro>
+                        <FieldRetiro display={OcultarField == true ? 'none' : 'inline'} placeholder="Dirección, Ciudad, Partido" name="retiro" type="text" />
                         <Error display={OcultarField == true ? 'none' : 'inline'}><ErrorMessage  name="retiro"/></Error>
                     </ContenedorInputLabel>
                     <ContenedorInputLabel>

@@ -173,10 +173,25 @@ const PieDePagina = styled.div`
 function footer() {
 
   const [windowSize, setWindowSize] = useState(0);
+  const [fechaActual, setfechaActual] = useState("");
   const [mapaResponsive, setmapaResponsive] = useState(false);
 
   function moverAlTopAlHacerClick(){
     window.scrollTo(0,0)
+  }
+
+
+  function setearFechaActual(){
+  // Obtén la fecha actual
+  var fechaActual = new Date();
+
+  // Obtiene el año como un número
+  var año = fechaActual.getFullYear();
+
+  // Convierte el año a una cadena
+  var añoComoString = año.toString();
+
+  setfechaActual(añoComoString)
   }
 
   function darWidthPantalla() {
@@ -186,6 +201,7 @@ function footer() {
   }
   
   useEffect(() => {
+    setearFechaActual()
     setWindowSize(window.innerWidth);
   }, [])
 
@@ -252,7 +268,7 @@ function footer() {
         </ContenedorPrincipalFooter>
 
         <PieDePagina>
-          <p>2022 | ADC ARGENTINA UNIENDO EMPRESAS S.A</p>
+          <p> ADC ARGENTINA UNIENDO EMPRESAS S.A | {`${fechaActual}`}</p>
           <p>
             Desarollado por{" "}
             <a href="https://www.linkedin.com/in/l3anav/">Leandro Avila</a>

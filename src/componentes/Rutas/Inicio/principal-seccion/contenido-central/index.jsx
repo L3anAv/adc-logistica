@@ -74,19 +74,19 @@ const BotonNuestrosServicios = styled.button`
   margin-left: 11.5%;
   line-height: 40px;
   border-radius: 5px;
-  background: #3d5bcc;
+  background: #223BF5;
   align-items: center;
   justify-content: center;
-  transition: all 0.8s ease;
+  transition: all 0.5s ease;
   animation: 2s BotonAnimacion;
   font-family: TituloPrincipal;
 
   :hover {
-    background: #294198;
+    background: #1930c4;
 
     span {
-      background: #3d5bcc;
-      font-size: 1.375rem;
+      background: #15279b;
+      font-size: 1.37rem;
     }
   }
 
@@ -113,7 +113,7 @@ const Span = styled.span`
   width: 50px;
   height: 40px;
   line-height: 40px;
-  background: #294198;
+  background: #102ef2;
   transition: font-size 0.5s;
   border-radius: 0% 5px 5px 0%;
 `;
@@ -128,7 +128,7 @@ const contenidoCentral = () => {
         <Subtitulo>Prestamos servicio a empresas y particulares.</Subtitulo>
         <BotonNuestrosServicios >
           <LinkContenido to={"/servicios"}>
-            CONOCER MÁS... <Span>&#62;</Span>
+            Más Información <Span>&#62;</Span>
           </LinkContenido>
         </BotonNuestrosServicios>
       </SeccionPrincipal>
