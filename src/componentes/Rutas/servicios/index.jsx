@@ -1,40 +1,25 @@
 import styled from "styled-components";
 import { useState,useEffect } from 'react'
-import TransporteCarga from "../../images/transporte-de-cargas.jpeg"
+import TransporteCarga from "../../images/transporte.jpg"
 import CargaTransporte from "../../images/carga-transporte-2.jpeg"
+import Deposito from "../../images/depósito.jpg"
+import AlquilerConstruc from "../../images/alquiler-construc.jpg"
 import Header from "../../componentes-de-uso-general/header/index"
 import Footer from "../../componentes-de-uso-general/footer/index"
 import { Titulo } from "../../styled-components-general/titulo-central"
 import FondoSeccion from "../../componentes-de-uso-general/fondo-inicio/fondo"
 
 const InformacionCentral = styled.div`
+
   display: flex;
   justify-content: center;
-  margin-top:${props => props.marginTop} ;
+  margin-top:${props => props.marginTop};
   
   @media (max-width: 1270px) {
     display: flex;
     flex-direction: column;
   }
 
-`;
-
-const Img = styled.img`
-  width: 400px;
-  height: 400px;
-  margin-left: 5%;
-  object-fit: cover;
-  margin-bottom: 30px;
-  animation:0.5s Aparicion linear;
-  margin-top: ${props => props.marginTop}px;
-
-  :hover{
-    cursor:pointer;
-  }
-
-  @media (max-width: 1270px) {
-    display: none;
-  }
 `;
 
 const ArticuloCentral = styled.article`
@@ -63,10 +48,43 @@ const ArticuloCentral = styled.article`
   }
 `;
 
+const ContenedorServicio = styled.div`
+
+  display:flex;
+  flex-direction:row;
+
+  div{
+    display:flex;
+    flex-direction:column;
+    margin-left:30px;
+  }
+`
+
+const Img = styled.img`
+  width: 420px;
+  height: 400px;
+  margin-left:20px;
+  object-fit: cover;
+  margin-bottom: 30px;
+  animation:0.5s Aparicion linear;
+  margin-top: ${props => props.marginTop}px;
+
+  :hover{
+    cursor:pointer;
+  }
+
+  @media (max-width: 1270px) {
+    display: none;
+  }
+`;
+
+
+
 const TituloSeccion = styled(Titulo)`
   z-index: 1;
   color: #000;
   font-size: 2rem;
+  margin-bottom:40px;
   jusitfy-self: center;
 
   ::selection {
@@ -75,6 +93,7 @@ const TituloSeccion = styled(Titulo)`
 `;
 
 const TituloServicios = styled(TituloSeccion)`
+
   font-size: 1.4rem;
 
   @media (max-width: 500px) {
@@ -140,12 +159,15 @@ function servicios() {
         urlFondo={`${CargaTransporte}`}
         height={"200px"}
       />
-      <Header MenuOff={menuOff} />
-      <InformacionCentral marginTop={marginTop}>
-      <Img src={CargaTransporte} marginTop={'-10'}/>
-        <ArticuloCentral>
-          <TituloSeccion>Nuestros servicios</TituloSeccion>
 
+      <Header MenuOff={menuOff} AlturaCambioColorMenu={170}/>
+
+      <InformacionCentral marginTop={marginTop}>
+
+        <ArticuloCentral>
+
+          <ContenedorServicio>
+          <div>
           <TituloServicios>Almacenamieno/Depósito</TituloServicios>
           <p>Almacená en nuestros depósitos contamos con almacenamiento en distintas localidades de la Provincia de Buenos Aires ubicados en Escobar, Pacheco, Parque Industrial, Pilar y San Pedro.</p>
           <UlListado>
@@ -155,15 +177,18 @@ function servicios() {
             <LiListado> - Control de Stock. </LiListado>
             <LiListado> - Armado de pedidos. </LiListado>
           </UlListado>
+          </div>
+
+          <Img src={Deposito} marginTop={'20'}/>
+          </ContenedorServicio>
           
+          <ContenedorServicio>
+          <Img src={TransporteCarga} marginTop={'20'}/>
+
+          <div>
           <TituloServicios>Tranporte</TituloServicios>
-
-          <Img src={TransporteCarga} marginTop={'40'}/>
-
-          <p>
-            Realizamos transporte en general con una flota de camiones,
-            camionetas y semis.
-          </p>
+          <p>Realizamos transporte en general con una flota de camiones,
+            camionetas y semis. </p>
           <UlListado>
             <p>Hacemos transporte de:</p>
             <LiListado> - Cargas generales.</LiListado>
@@ -171,15 +196,14 @@ function servicios() {
             <LiListado> - Mudanzas y Fletes.</LiListado>
             <LiListado> - Acarreo (Gruas, Carretones, Maquinarias). </LiListado>
           </UlListado>
+          </div>
+          </ContenedorServicio>
 
-          <TituloServicios>
-            Servicios de Alquileres para la Construcción
-          </TituloServicios>
 
-          <p>
-            Contamos con maquinaria disponible para alquilar, entre otras
-            utilidades.
-          </p>
+          <ContenedorServicio>
+          <div>
+          <TituloServicios> Servicios de Alquileres para la Construcción </TituloServicios>
+          <p> Contamos con maquinaria disponible para alquilar, entre otras utilidades.</p>
           <UlListado>
             <p>Alquieres/Servicio de:</p>
             <LiListado> - Bobcat.</LiListado>
@@ -189,15 +213,22 @@ function servicios() {
             <LiListado> - Baños quimicos. </LiListado>
             <LiListado> - Tijeras / Elevacion de personas. </LiListado>
           </UlListado>
+          </div>
 
+          <Img src={AlquilerConstruc} marginTop={'20'}/>
+          </ContenedorServicio>
+
+          <ContenedorServicio>
           <UlListado>
-            <p><b>Nuestra cobertura para los servicios son:</b></p>
+            <p><b>Nuestra cobertura:</b></p>
             <LiListado> - Capital Federal.</LiListado>
             <LiListado> - Interior del País. </LiListado>
             <LiListado> - Frecuencia semanal a Misiones.</LiListado>
             <LiListado> - Frecuencia diara a Aeropuerto Ezeiza. </LiListado>
             <LiListado> - Internacional (Somos transporte ATA).</LiListado>
           </UlListado>
+          </ContenedorServicio>
+
         </ArticuloCentral>
       </InformacionCentral>
       <Footer />

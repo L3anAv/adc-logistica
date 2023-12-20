@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 const FondoDeSeccion = styled.div`
   width: 100%;
-  height: ${props => props.height};
+  will-change: height;
   background: url(${props => props.urlFondo});
+  height: ${props => props.height};
+  transition: height 0.3s ease;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from "react-router-dom"
-import { useState,useEffect } from 'react'
+import { useState,useEffect,useLayoutEffect } from 'react'
 import ImagenSeccion from "../../images/deposito-carga.jpeg"
 import Header from '../../componentes-de-uso-general/header/index'
 import Footer from '../../componentes-de-uso-general/footer/index'
@@ -38,8 +38,10 @@ const TituloPrincipal = styled.h2`
 
 const ContenidoDeQuienesSomos = styled.section`
   opacity:${props => props.opacidad};
-  margin-top:${props => props.altoDeFondo}px;
   animation: ${props => props.animacion};
+  margin-bottom: ${props => (props.animacion ? '0' : '100px')};
+  margin-top: ${props => (props.animacion ? '410px' : '300px')};
+  transition: margin-top 0.2s ease, opacity 0.3s ease, margin-bottom 0.3s ease;
 `
 
 const TituloSeccion = styled(Titulo)`
@@ -141,7 +143,7 @@ function quienesSomos() {
         window.addEventListener('scroll', () =>{
     
           let alturaDeDocumento = document.body.scrollHeight
-          let scrollRecorrido = window.pageYOffset
+          let scrollRecorrido = window.scrollY
           let viewport = window.innerHeight
           
           if(scrollRecorrido + viewport >= (alturaDeDocumento - 520)){
@@ -152,16 +154,39 @@ function quienesSomos() {
         })
     }
 
-    // -> Funcion que controla la altura del scrol
-    function darPosicionDeScroll() {
-        window.addEventListener("scroll", () => {
-        setscrollPosicion(window.scrollY);
-        });
-    }
+    useEffect(() => {
+
+      const posicionScroll = () => {
+        const currentScroll = window.scrollY;
+        setscrollPosicion(currentScroll);
+      };
+  
+      // Ejecutar al montar el componente
+      posicionScroll();
+  
+      // Eliminar el event listener después de ejecutarse al principio
+      window.removeEventListener('scroll', posicionScroll);
+  
+      // Agregar el event listener para futuros cambios en la posición del scroll
+      window.addEventListener('scroll', posicionScroll, { passive: true });
+  
+      // Limpiar el event listener al desmontar el componente
+      return () => {
+        window.removeEventListener('scroll', posicionScroll);
+      };
+
+    }, [])
 
     useEffect(() => {
-        darPosicionDeScroll();
-    
+      const maxHeight = 793; // Establece la posición máxima del scroll
+  
+      // Aplica la restricción de la posición máxima del scroll
+      if (scrollPosicion > maxHeight) {
+        window.scrollTo(0, maxHeight);
+      }
+    }, [scrollPosicion]);
+
+    useEffect(() => {
         // -> Condicional que pone el menu en fixed
         if (scrollPosicion >= 70){
             setaltoDeFondo(410)
@@ -170,16 +195,16 @@ function quienesSomos() {
             setaltoDeFondo(300)
         }
     
-      }, [scrollPosicion]);
+    }, [scrollPosicion]);
 
   return (
     <>
     <Contenedor onScroll={finalDePagina()} id="contenedorInicial">
-      <FondoSeccion urlFondo={`${ImagenSeccion}`} height={animacion == false ? '500px' : '300px'}/>
-      <Header MenuOff={menuOff}/>
-      <TituloPrincipal display={animacion == true ? 'none' : 'inline-block'}
+      <FondoSeccion urlFondo={`${ImagenSeccion}`} height={animacion === false ? '500px' : '300px'}/>
+      <Header MenuOff={menuOff} AlturaCambioColorMenu={230}/>
+      <TituloPrincipal display={animacion === true ? 'none' : 'inline-block'}
       >¿QUIENES SOMOS?</TituloPrincipal>
-      <ContenidoDeQuienesSomos altoDeFondo={altoDeFondo} 
+      <ContenidoDeQuienesSomos altoDeFondo={altoDeFondo}
                                animacion={animacion == true ? '1.5s TextoAparicion linear' : ''}
                                opacidad={animacion == true ? '100%' : '0'}>
         <TituloSeccion>¿QUIENES SOMOS?</TituloSeccion>

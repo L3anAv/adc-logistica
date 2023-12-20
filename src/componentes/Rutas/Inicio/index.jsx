@@ -29,7 +29,7 @@ function index() {
   return (
     <>
       <div onScroll={finalDePagina()} id="contenedorInicial">
-      <Principal MenuOff={menuOff}/>
+      <Principal MenuOff={menuOff} AlturaCambioColorMenu={545}/>
       <QueHacemos />
       <SeccionMarcas />
       <Formulario />

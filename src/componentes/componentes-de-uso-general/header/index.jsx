@@ -91,14 +91,14 @@ const Titulo = styled.h1`
   }
 `;
 
-const header = ({MenuOff}) => {
+const header = ({MenuOff, AlturaCambioColorMenu}) => {
 
   const [windowSize, setWindowSize] = useState(0);
   const [scrollPosicion, setscrollPosicion] = useState(0);
   const [contactoFixed, setcontactoFixed] = useState(false);
   const [contactoColor, setcontactoColor] = useState(false);
 
-  // -> Funcion que controla la altura del scrol
+  // -> Funcion que controla la altura del scroll
   function darPosicionDeScroll() {
     window.addEventListener("scroll", () => {
       setscrollPosicion(window.scrollY);
@@ -123,7 +123,7 @@ const header = ({MenuOff}) => {
     }
 
     // -> Condicional que pone el cambio de color en el menu
-    if (scrollPosicion >= 545) {
+    if (scrollPosicion >= AlturaCambioColorMenu) {
       setcontactoColor(true);
     } else {
       setcontactoColor(false);
