@@ -6,7 +6,7 @@ const ArrayDatos = [
         "Colum":"2/3",
         "RowResponsive":"3/4",
         "ColumnResponsive":"2/4",
-        "LiContenido": ["- Transporte de cargas generales y peligrosas.", "- Fletes y mudanzas."]
+        "LiContenido": ["Transporte de cargas generales y peligrosas.", "Fletes y mudanzas."]
       },
       {
         "Svg": "Acarreo",
@@ -14,7 +14,7 @@ const ArrayDatos = [
         "Colum":"3/4",
         "RowResponsive":"5/6",
         "ColumnResponsive":"2/4",
-        "LiContenido": ["- Acarreo de autos/maquinaria."]
+        "LiContenido": ["Acarreo de autos/maquinaria."]
       },
       {
         "Svg": "Desagote",
@@ -22,7 +22,7 @@ const ArrayDatos = [
         "Colum":"2/3",
         "RowResponsive":"6/7",
         "ColumnResponsive":"2/4",
-        "LiContenido": ["- Desagotes."]
+        "LiContenido": ["Desagotes."]
       },
       {
       "Svg": "Volquete",
@@ -30,7 +30,7 @@ const ArrayDatos = [
       "Colum":"3/4",
       "RowResponsive":"7/8",
       "ColumnResponsive":"2/4",
-      "LiContenido": ["- Volquetes."]
+      "LiContenido": ["Volquetes."]
       }
     ],
     [
@@ -40,7 +40,7 @@ const ArrayDatos = [
         "Colum":"2/3",
         "RowResponsive":"3/4",
         "ColumnResponsive":"2/4",
-        "LiContenido": ["- Autoelevadores."]
+        "LiContenido": ["Autoelevadores."]
       },
       {
         "Svg": "banoQuimico",
@@ -48,7 +48,7 @@ const ArrayDatos = [
         "Colum":"3/4",
         "RowResponsive":"5/6",
         "ColumnResponsive":"2/4",
-        "LiContenido": ["- Baños químicos."]
+        "LiContenido": ["Baños químicos."]
       },
       {
         "Svg": "Bobcat",
@@ -56,7 +56,7 @@ const ArrayDatos = [
         "Colum":"2/3",
         "RowResponsive":"6/7",
         "ColumnResponsive":"2/4",
-        "LiContenido": ["- Bobcat."]
+        "LiContenido": ["Bobcat."]
       },
       {
       "Svg": "Grua",
@@ -64,7 +64,7 @@ const ArrayDatos = [
       "Colum":"3/4",
       "RowResponsive":"7/8",
       "ColumnResponsive":"2/4",
-      "LiContenido": ["- Gruas hidraúlicas."]
+      "LiContenido": ["Gruas hidraúlicas."]
       }
     ],
     [{
@@ -73,7 +73,7 @@ const ArrayDatos = [
       "Colum":"2/3",
       "RowResponsive":"3/4",
       "ColumnResponsive":"2/4",
-      "LiContenido": ["- Almacenamiento y gestión en nuestros depósitos."]
+      "LiContenido": ["Almacenamiento y gestión en nuestros depósitos."]
     },
     {
       "Svg": "DepositoCarro",
@@ -81,7 +81,7 @@ const ArrayDatos = [
       "Colum":"3/4",
       "RowResponsive":"5/6",
       "ColumnResponsive":"2/4",
-      "LiContenido": ["- In/Out.", "- Repartos."]
+      "LiContenido": ["In/Out.", "Repartos."]
     }
   ]
   ]
