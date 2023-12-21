@@ -125,8 +125,8 @@ const Svg = styled.svg`
 
 const RedSocial = styled(Svg)`
   @media (max-width: 815px) {
-    width: 12px;
-    height: 12px;
+    width: 22px; /* Revisar tamaño cuando se agreguen más redes sociales */
+    height: 22px;
     margin-left: 2px;
     margin-right: 2px;
   }

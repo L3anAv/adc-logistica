@@ -205,7 +205,7 @@ function servicios() {
             <LiListado> - Cargas generales.</LiListado>
             <LiListado> - Cargas peligrosas. </LiListado>
             <LiListado> - Mudanzas y Fletes.</LiListado>
-            <LiListado> - Acarreo (Gruas, Carretones, Maquinarias). </LiListado>
+            <LiListado> - Acarreo (Grúas, Carretones, Maquinarias). </LiListado>
           </UlListado>
 
           <UlListado>
@@ -213,7 +213,7 @@ function servicios() {
             <LiListado> - Capital Federal.</LiListado>
             <LiListado> - Interior del País. </LiListado>
             <LiListado> - Frecuencia semanal a Misiones.</LiListado>
-            <LiListado> - Frecuencia diara a Aeropuerto Ezeiza. </LiListado>
+            <LiListado> - Frecuencia diaria a Aeropuerto Ezeiza. </LiListado>
             <LiListado> - Internacional (Somos transporte ATA).</LiListado>
           </UlListado>
           </div>
@@ -228,9 +228,9 @@ function servicios() {
             <LiListado> - Bobcat.</LiListado>
             <LiListado> - Desagotes. </LiListado>
             <LiListado> - Volquetes. </LiListado>
-            <LiListado> - Hidrogruas. </LiListado>
-            <LiListado> - Baños quimicos. </LiListado>
-            <LiListado> - Tijeras / Elevacion de personas. </LiListado>
+            <LiListado> - Hidrogrúas. </LiListado>
+            <LiListado> - Baños químicos. </LiListado>
+            <LiListado> - Tijeras / Elevación de personas. </LiListado>
           </UlListado>
           </div>
 
@@ -243,7 +243,7 @@ function servicios() {
 
           <div>
           <TituloServicios>Almacenamiento / Depósito</TituloServicios>
-          <p>Almacená en nuestros depósitos contamos con almacenamiento en distintas localidades de la Provincia de Buenos Aires ubicados en Escobar, Pacheco, Parque Industrial, Pilar y San Pedro.</p>
+          <p>Almacená en nuestros depósitos, contamos con almacenamiento en distintas localidades de la Provincia de Buenos Aires ubicados en Escobar, Pacheco, Parque Industrial, Pilar y San Pedro.</p>
           <UlListado>
             <p><b>Nos encargamos de:</b></p>
             <LiListado> - In/Out.</LiListado>

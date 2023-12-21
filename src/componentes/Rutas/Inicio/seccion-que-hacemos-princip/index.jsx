@@ -40,6 +40,7 @@ const MenuServicios = styled.nav`
   grid-row: 2/3;
   grid-column: 2/4;
   user-select: none;
+  margin-bottom:20px;
   justify-self: center;
 `;
 
