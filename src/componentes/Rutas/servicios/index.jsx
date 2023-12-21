@@ -52,6 +52,7 @@ const ContenedorServicio = styled.div`
 
   display:flex;
   flex-direction:row;
+  margin-bottom:50px;
 
   div{
     display:flex;
@@ -79,18 +80,20 @@ const Img = styled.img`
 `;
 
 
-
 const TituloSeccion = styled(Titulo)`
   z-index: 1;
   color: #000;
   font-size: 2rem;
   margin-bottom:40px;
-  jusitfy-self: center;
 
   ::selection {
     color: #fff;
   }
 `;
+
+const TiuloPrincipal = styled(TituloSeccion)`
+  text-align: center;
+`
 
 const TituloServicios = styled(TituloSeccion)`
 
@@ -128,18 +131,40 @@ function servicios() {
   const [menuOff, setMenuOff] = useState(false)
   const [marginTop, setmarginTop] = useState(300)
   const [scrollPosicion, setscrollPosicion] = useState(0);
-
-  const rutaDeImagen = 'src/componentes/images/carga-transporte-2.jpeg'
   
-    // -> Funcion que controla la altura del scrol
-    function darPosicionDeScroll() {
-      window.addEventListener("scroll", () => {
-      setscrollPosicion(window.scrollY);
-      });
-  }
+  useEffect(() => {
+
+    const posicionScroll = () => {
+      const currentScroll = window.scrollY;
+      setscrollPosicion(currentScroll);
+    };
+
+    // Ejecutar al montar el componente
+    posicionScroll();
+
+    // Eliminar el event listener después de ejecutarse al principio
+    window.removeEventListener('scroll', posicionScroll);
+
+    // Agregar el event listener para futuros cambios en la posición del scroll
+    window.addEventListener('scroll', posicionScroll, { passive: true });
+
+    // Limpiar el event listener al desmontar el componente
+    return () => {
+      window.removeEventListener('scroll', posicionScroll);
+    };
+
+  }, [])
 
   useEffect(() => {
-      darPosicionDeScroll();
+    const maxHeight = 1770; // Establece la posición máxima del scroll
+
+    // Aplica la restricción de la posición máxima del scroll
+    if (scrollPosicion > maxHeight) {
+      window.scrollTo(0, maxHeight);
+    }
+  }, [scrollPosicion]);
+
+  useEffect(() => {
   
       // -> Condicional que pone el menu en fixed
       if (scrollPosicion >= 70){
@@ -165,47 +190,41 @@ function servicios() {
       <InformacionCentral marginTop={marginTop}>
 
         <ArticuloCentral>
-
-          <ContenedorServicio>
-          <div>
-          <TituloServicios>Almacenamieno/Depósito</TituloServicios>
-          <p>Almacená en nuestros depósitos contamos con almacenamiento en distintas localidades de la Provincia de Buenos Aires ubicados en Escobar, Pacheco, Parque Industrial, Pilar y San Pedro.</p>
-          <UlListado>
-            <p>Nos encargamos de:</p>
-            <LiListado> - In/Out.</LiListado>
-            <LiListado> - Repartos. </LiListado>
-            <LiListado> - Control de Stock. </LiListado>
-            <LiListado> - Armado de pedidos. </LiListado>
-          </UlListado>
-          </div>
-
-          <Img src={Deposito} marginTop={'20'}/>
-          </ContenedorServicio>
           
+          <TiuloPrincipal>NUESTROS SERVICIOS</TiuloPrincipal>
+
           <ContenedorServicio>
-          <Img src={TransporteCarga} marginTop={'20'}/>
+          <Img src={TransporteCarga} marginTop={'70'}/>
 
           <div>
           <TituloServicios>Tranporte</TituloServicios>
           <p>Realizamos transporte en general con una flota de camiones,
             camionetas y semis. </p>
           <UlListado>
-            <p>Hacemos transporte de:</p>
+            <p><b>Hacemos transporte de:</b></p>
             <LiListado> - Cargas generales.</LiListado>
             <LiListado> - Cargas peligrosas. </LiListado>
             <LiListado> - Mudanzas y Fletes.</LiListado>
             <LiListado> - Acarreo (Gruas, Carretones, Maquinarias). </LiListado>
           </UlListado>
+
+          <UlListado>
+            <p><b>Nuestra cobertura:</b></p>
+            <LiListado> - Capital Federal.</LiListado>
+            <LiListado> - Interior del País. </LiListado>
+            <LiListado> - Frecuencia semanal a Misiones.</LiListado>
+            <LiListado> - Frecuencia diara a Aeropuerto Ezeiza. </LiListado>
+            <LiListado> - Internacional (Somos transporte ATA).</LiListado>
+          </UlListado>
           </div>
           </ContenedorServicio>
-
 
           <ContenedorServicio>
           <div>
           <TituloServicios> Servicios de Alquileres para la Construcción </TituloServicios>
           <p> Contamos con maquinaria disponible para alquilar, entre otras utilidades.</p>
           <UlListado>
-            <p>Alquieres/Servicio de:</p>
+            <p><b>Para servicio de alquiler contamos con:</b></p>
             <LiListado> - Bobcat.</LiListado>
             <LiListado> - Desagotes. </LiListado>
             <LiListado> - Volquetes. </LiListado>
@@ -219,15 +238,23 @@ function servicios() {
           </ContenedorServicio>
 
           <ContenedorServicio>
+
+          <Img src={Deposito} marginTop={'20'}/>
+
+          <div>
+          <TituloServicios>Almacenamiento / Depósito</TituloServicios>
+          <p>Almacená en nuestros depósitos contamos con almacenamiento en distintas localidades de la Provincia de Buenos Aires ubicados en Escobar, Pacheco, Parque Industrial, Pilar y San Pedro.</p>
           <UlListado>
-            <p><b>Nuestra cobertura:</b></p>
-            <LiListado> - Capital Federal.</LiListado>
-            <LiListado> - Interior del País. </LiListado>
-            <LiListado> - Frecuencia semanal a Misiones.</LiListado>
-            <LiListado> - Frecuencia diara a Aeropuerto Ezeiza. </LiListado>
-            <LiListado> - Internacional (Somos transporte ATA).</LiListado>
+            <p><b>Nos encargamos de:</b></p>
+            <LiListado> - In/Out.</LiListado>
+            <LiListado> - Repartos. </LiListado>
+            <LiListado> - Control de Stock. </LiListado>
+            <LiListado> - Armado de pedidos. </LiListado>
           </UlListado>
+          </div>
+
           </ContenedorServicio>
+
 
         </ArticuloCentral>
       </InformacionCentral>

@@ -258,7 +258,7 @@ const queHacemos = () => {
       <ContenedorQueHacemos
         QueHacemosMenuEstaFixed={MenuEstaFixed == true ? "125px" : "0"}
       >
-        <TituloSeccion>¿QUE HACEMOS?</TituloSeccion>
+        <TituloSeccion>¿QUÉ HACEMOS?</TituloSeccion>
 
         <MenuServicios>
           <UlMenuServ>

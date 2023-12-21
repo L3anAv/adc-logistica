@@ -44,23 +44,26 @@ const TituloPrincipal = styled.h2`
 `
 
 const Img = styled.img`
-  z-index:-1;
+  /*z-index:-1;*/
   width:350px;
   cursor:pointer;
-  transform:scale(0.4);
+  transform:scale(0.5);
   filter: grayscale(100%);
   transition:all 0.5s ease-in;
 
   :hover{
     filter: grayscale(0);
+    transform:scale(0.55);
   }
 
   @media (max-width: 1000px) {
     transform:scale(0.5);
+    filter: grayscale(0);
   }
 
   @media (max-width: 500px) {
     margin-left:-25px;
+    filter: grayscale(0);
   }
 
 `

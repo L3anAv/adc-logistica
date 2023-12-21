@@ -30,8 +30,8 @@ const Img = styled.img`
   justify-content: center;
 
   @media (max-width: 1160px) {
-    display: inline;
     width: 200px;
+    display: inline;
   }
 
   @media (max-width: 700px) {

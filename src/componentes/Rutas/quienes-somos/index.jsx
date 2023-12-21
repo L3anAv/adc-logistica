@@ -203,23 +203,23 @@ function quienesSomos() {
       <FondoSeccion urlFondo={`${ImagenSeccion}`} height={animacion === false ? '500px' : '300px'}/>
       <Header MenuOff={menuOff} AlturaCambioColorMenu={230}/>
       <TituloPrincipal display={animacion === true ? 'none' : 'inline-block'}
-      >¿QUIENES SOMOS?</TituloPrincipal>
+      >¿QUIÉNES SOMOS?</TituloPrincipal>
       <ContenidoDeQuienesSomos altoDeFondo={altoDeFondo}
                                animacion={animacion == true ? '1.5s TextoAparicion linear' : ''}
                                opacidad={animacion == true ? '100%' : '0'}>
-        <TituloSeccion>¿QUIENES SOMOS?</TituloSeccion>
+        <TituloSeccion>¿QUIÉNES SOMOS?</TituloSeccion>
         <InformacionCentral>
         <Img src={ImagenSeccion} altoDeFondo={300}/>
         <ArticuloCentral>
-        <p>ADC Argentina Uniendo Empresas presta Servicios Logísticos Integrales para empresas y particulares.</p>
+        <p>ADC Argentina Uniendo Empresas presta servicios logísticos integrales para empresas y particulares.</p>
 
-        <p>Hacemos acarreos de maquinaria, fletes, repartos, mudanzas, almacenamiento y hemos incorporado servicios complementarios como la colocación de volquetes, desagotes, hidrogruas, alquiler de autoelevadores, retroexcavadoras y otros.</p>
+        <p>Realizamos acarreos de maquinaria, fletes, repartos, mudanzas, almacenamiento sumado a servicios complementarios como la colocación de volquetes, desagotes, hidrogrúas, alquiler de autoelevadores, retroexcavadoras, entre otros.</p>
 
         <p>Nuestro equipo de profesionales da soporte y brinda soluciones a todos aquellos que nos eligen para trabajar y resolver todo tipo de requerimiento.</p>
         <p>Nos eligen empresas como Toyota, Horizon, Techo, Peri, Piko Home, entre otras.</p>
 
         <p>¡Estamos a la espera de su requerimiento!</p>
-            <Boton to="/servicios" onClick={moverAlTopAlHacerClick}>NUESTROS SERVICIOS</Boton>
+            <Boton to="/servicios" onClick={moverAlTopAlHacerClick}>Servicios Detallados</Boton>
         </ArticuloCentral>
         </InformacionCentral>
       </ContenidoDeQuienesSomos>
