@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom"
 
-const SeccionPrincipal = styled.section`
+export const SeccionPrincipal = styled.section`
   widht: 100%;
   margin-bottom: 6%;
 
@@ -16,7 +16,7 @@ const SeccionPrincipal = styled.section`
   }
 `;
 
-const TituloCentral = styled.h2`
+export const TituloCentral = styled.h2`
   width: 72%;
   z-index: 1;
   color: #fff;
@@ -50,7 +50,7 @@ const TituloCentral = styled.h2`
   }
 `;
 
-const Subtitulo = styled(TituloCentral)`
+export const Subtitulo = styled(TituloCentral)`
   margin-top: 0;
   font-weight: 100;
   font-size: 1.25rem;
@@ -65,7 +65,7 @@ const Subtitulo = styled(TituloCentral)`
   }
 `;
 
-const BotonNuestrosServicios = styled.button`
+export const BotonNuestrosServicios = styled.button`
   color: #fff;
   width: 250px;
   height: 40px;
@@ -100,7 +100,7 @@ const BotonNuestrosServicios = styled.button`
   }
 `;
 
-const LinkContenido = styled(Link)`
+export const LinkContenido = styled(Link)`
   color: #fff;
   display: flex;
   font-size: 1.125rem;
@@ -109,7 +109,7 @@ const LinkContenido = styled(Link)`
   font-family: TituloPrincipal;
 `;
 
-const Span = styled.span`
+export const Span = styled.span`
   width: 50px;
   height: 40px;
   line-height: 40px;
@@ -117,23 +117,3 @@ const Span = styled.span`
   transition: font-size 0.5s;
   border-radius: 0% 5px 5px 0%;
 `;
-
-const contenidoCentral = () => {
-  return (
-    <>
-      <SeccionPrincipal>
-        <TituloCentral>
-          SERVICIOS LOGÍSTICOS INTEGRALES & ALQUILER DE MAQUINARIAS
-        </TituloCentral>
-        <Subtitulo>Prestamos servicio a empresas y particulares.</Subtitulo>
-        <BotonNuestrosServicios >
-          <LinkContenido to={"/servicios"}>
-            Más Información <Span>&#62;</Span>
-          </LinkContenido>
-        </BotonNuestrosServicios>
-      </SeccionPrincipal>
-    </>
-  );
-};
-
-export default contenidoCentral;

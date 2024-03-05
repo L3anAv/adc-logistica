@@ -12,5 +12,4 @@ export const Titulo = styled.h2`
     color: #000;
     background:rgba(78,112,239,1);
   }
-
 `

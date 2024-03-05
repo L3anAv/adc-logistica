@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Svg } from "../../../../../styled-components-general/svg"
+import { Svg } from '../../../styled-components-general/svg'
 
 const Acarreo = styled(Svg)`
   transform: scale(1.3);

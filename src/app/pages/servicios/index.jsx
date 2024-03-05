@@ -1,130 +1,20 @@
-import styled from "styled-components";
 import { useState,useEffect } from 'react'
-import Deposito from "../../../assets/images/depósito.webp"
-import Header from "../../components/other-cmpnts/header/index"
-import Footer from "../../components/other-cmpnts/footer/index"
-import TransporteCarga from "../../../assets/images/transporte.webp"
-import { Titulo } from "../../styled-components-general/titulo-central"
-import FondoSeccion from "../../components/other-cmpnts/fondo-inicio/fondo"
-import AlquilerConstruc from "../../../assets/images/alquiler-construc.webp"
-import CargaTransporte from "../../../assets/images/carga-transporte-2.webp"
-
-const InformacionCentral = styled.div`
-
-  display: flex;
-  justify-content: center;
-  margin-top:${props => props.marginTop};
-  
-  @media (max-width: 1270px) {
-    display: flex;
-    flex-direction: column;
-  }
-
-`;
-
-const ArticuloCentral = styled.article`
-  color: #000;
-  display: flex;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 100px;
-  font-size: 0.9rem;
-  margin-bottom: 100px;
-  text-align: justify;
-  flex-direction: column;
-  animation:1.5s TextoAparicion;
-  font-family: SubTituloPrincipal;
-
-  p {
-    font-size:1rem;
-    margin-top: 18px;
-    margin-bottom: 8px;
-  }
-
-  @media (max-width: 500px) {
-    p {
-      font-size:0.8rem;
-    }
-  }
-`;
-
-const ContenedorServicio = styled.div`
-
-  display:flex;
-  flex-direction:row;
-  margin-bottom:50px;
-
-  div{
-    display:flex;
-    flex-direction:column;
-    margin-left:30px;
-  }
-`
-
-const Img = styled.img`
-  width: 420px;
-  height: 400px;
-  margin-left:20px;
-  object-fit: cover;
-  margin-bottom: 30px;
-  animation:0.5s Aparicion linear;
-  margin-top: ${props => props.marginTop}px;
-
-  :hover{
-    cursor:pointer;
-  }
-
-  @media (max-width: 1270px) {
-    display: none;
-  }
-`;
-
-
-const TituloSeccion = styled(Titulo)`
-  z-index: 1;
-  color: #000;
-  font-size: 2rem;
-  margin-bottom:40px;
-
-  ::selection {
-    color: #fff;
-  }
-`;
-
-const TiuloPrincipal = styled(TituloSeccion)`
-  text-align: center;
-`
-
-const TituloServicios = styled(TituloSeccion)`
-
-  font-size: 1.4rem;
-
-  @media (max-width: 500px) {
-    font-size: 0.8rem;
-  }
-`;
-
-const UlListado = styled.ul`
-  margin-top: 15px;
-  margin-bottom: 18px;
-
-  p{
-    font-size:0.9rem;
-    margin-bottom:30px;
-    text-aling:justify;
-  }
-
-`;
-
-const LiListado = styled.li`
-  margin-top:10px;
-  margin-left: 30px;
-
-  @media (max-width: 500px) {
-    font-size:0.8rem;
-    text-aling:justify;
-  }
-`;
+import { 
+ Img,
+ UlListado,
+ LiListado,
+ TiuloPrincipal,
+ ArticuloCentral,
+ TituloServicios,
+ ContenedorServicio,
+ InformacionCentral } from './servicios.styled'
+ import Deposito from "../../assets/images/depósito.webp"
+ import Header from "../../components/other-cmpnts/header/index"
+ import Footer from "../../components/other-cmpnts/footer/index"
+import FondoSeccion from "../../styled-components-general/fondo"
+import TransporteCarga from "../../assets/images/transporte.webp"
+import AlquilerConstruc from "../../assets/images/alquiler-construc.webp"
+import CargaTransporte from "../../assets/images/carga-transporte-2.webp"
 
 function servicios() {
 
