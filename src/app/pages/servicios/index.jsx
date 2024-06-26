@@ -87,7 +87,7 @@ function servicios() {
           <Img src={TransporteCarga} marginTop={'70'}/>
 
           <div>
-          <TituloServicios>Tranporte</TituloServicios>
+          <TituloServicios>Transporte</TituloServicios>
           <p>Realizamos transporte en general con una flota de camiones,
             camionetas y semis. </p>
           <UlListado>
